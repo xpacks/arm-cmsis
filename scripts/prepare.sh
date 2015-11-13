@@ -5,8 +5,10 @@ IFS=$'\n\t'
 # Archives are to be downloaded from:
 # https://sourceforge.net/projects/micro-os-plus/files/Vendor%20Archives/ARM/CMSIS/
 
-RELEASE_VERSION="V3.01"
-RELEASE_ID="r3p1-00rel0"
+# RELEASE_VERSION="V3.01"
+# RELEASE_ID="r3p1-00rel0"
+RELEASE_VERSION="V3.20"
+RELEASE_ID="r3p2-00rel1"
 
 NAME_PREFIX="CMSIS-SP-00300-"
 RELEASE_NAME="${NAME_PREFIX}${RELEASE_ID}"
@@ -66,7 +68,7 @@ These files were extracted from \`${ARCHIVE_NAME}\`.
 
 To save space, the following folders/files were removed:
 
-* all nonportable *.exe files
+* all non-portable *.exe files
 * CMSIS/Documentation
 * CMSIS/index.html
 * CMSIS/DSP_Lib
