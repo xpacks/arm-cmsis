@@ -2,7 +2,7 @@
  * @file     core_sc000.h
  * @brief    CMSIS SC000 Core Peripheral Access Layer Header File
  * @version  V3.30
- * @date     24. February 2014
+ * @date     06. May 2014
  *
  * @note
  *
@@ -69,7 +69,7 @@
 
 /*  CMSIS SC000 definitions */
 #define __SC000_CMSIS_VERSION_MAIN  (0x03)                                   /*!< [31:16] CMSIS HAL main version */
-#define __SC000_CMSIS_VERSION_SUB   (0x20)                                   /*!< [15:0]  CMSIS HAL sub version  */
+#define __SC000_CMSIS_VERSION_SUB   (0x30)                                   /*!< [15:0]  CMSIS HAL sub version  */
 #define __SC000_CMSIS_VERSION       ((__SC000_CMSIS_VERSION_MAIN << 16) | \
                                       __SC000_CMSIS_VERSION_SUB          )   /*!< CMSIS HAL version number       */
 
@@ -504,7 +504,7 @@ typedef struct
 #define SysTick_CALIB_SKEW_Msk             (1UL << SysTick_CALIB_SKEW_Pos)                /*!< SysTick CALIB: SKEW Mask */
 
 #define SysTick_CALIB_TENMS_Pos             0                                             /*!< SysTick CALIB: TENMS Position */
-#define SysTick_CALIB_TENMS_Msk            (0xFFFFFFUL << SysTick_VAL_CURRENT_Pos)        /*!< SysTick CALIB: TENMS Mask */
+#define SysTick_CALIB_TENMS_Msk            (0xFFFFFFUL << SysTick_CALIB_TENMS_Pos)        /*!< SysTick CALIB: TENMS Mask */
 
 /*@} end of group CMSIS_SysTick */
 
