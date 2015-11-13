@@ -1,8 +1,8 @@
 /**************************************************************************//**
  * @file     core_cm4.h
  * @brief    CMSIS Cortex-M4 Core Peripheral Access Layer Header File
- * @version  V3.30
- * @date     06. May 2014
+ * @version  V4.00
+ * @date     22. August 2014
  *
  * @note
  *
@@ -76,8 +76,8 @@
  */
 
 /*  CMSIS CM4 definitions */
-#define __CM4_CMSIS_VERSION_MAIN  (0x03)                                   /*!< [31:16] CMSIS HAL main version   */
-#define __CM4_CMSIS_VERSION_SUB   (0x30)                                   /*!< [15:0]  CMSIS HAL sub version    */
+#define __CM4_CMSIS_VERSION_MAIN  (0x04)                                   /*!< [31:16] CMSIS HAL main version   */
+#define __CM4_CMSIS_VERSION_SUB   (0x00)                                   /*!< [15:0]  CMSIS HAL sub version    */
 #define __CM4_CMSIS_VERSION       ((__CM4_CMSIS_VERSION_MAIN << 16) | \
                                     __CM4_CMSIS_VERSION_SUB          )     /*!< CMSIS HAL version number         */
 
@@ -108,7 +108,7 @@
   #define __INLINE         inline                                     /*!< inline keyword for TASKING Compiler   */
   #define __STATIC_INLINE  static inline
 
-#elif defined ( __CSMC__ )		/* Cosmic */
+#elif defined ( __CSMC__ )
   #define __packed
   #define __ASM            _asm                                      /*!< asm keyword for COSMIC Compiler      */
   #define __INLINE         inline                                    /*use -pc99 on compile line !< inline keyword for COSMIC Compiler   */
@@ -116,7 +116,8 @@
 
 #endif
 
-/** __FPU_USED indicates whether an FPU is used or not. For this, __FPU_PRESENT has to be checked prior to making use of FPU specific registers and functions.
+/** __FPU_USED indicates whether an FPU is used or not.
+    For this, __FPU_PRESENT has to be checked prior to making use of FPU specific registers and functions.
 */
 #if defined ( __CC_ARM )
   #if defined __TARGET_FPU_VFP
@@ -194,7 +195,11 @@
 #include <stdint.h>                      /* standard types definitions                      */
 #include <core_cmInstr.h>                /* Core Instruction Access                         */
 #include <core_cmFunc.h>                 /* Core Function Access                            */
-#include <core_cm4_simd.h>               /* Compiler specific SIMD Intrinsics               */
+#include <core_cmSimd.h>                 /* Compiler specific SIMD Intrinsics               */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __CORE_CM4_H_GENERIC */
 
@@ -202,6 +207,10 @@
 
 #ifndef __CORE_CM4_H_DEPENDANT
 #define __CORE_CM4_H_DEPENDANT
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
 
 /* check device defines and use defaults */
 #if defined __CHECK_DEVICE_DEFINES
@@ -1789,11 +1798,14 @@ __STATIC_INLINE int32_t ITM_CheckChar (void) {
 
 /*@} end of CMSIS_core_DebugFunctions */
 
-#endif /* __CORE_CM4_H_DEPENDANT */
+
+
 
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* __CORE_CM4_H_DEPENDANT */
 
 // [ILG]
 #if defined ( __GNUC__ )

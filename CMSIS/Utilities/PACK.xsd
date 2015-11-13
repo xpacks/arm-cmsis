@@ -18,8 +18,8 @@
   
   3. This notice may not be removed or altered from any source distribution.
  
-  $Date:        22. May 2014
-  $Revision:    1.3
+  $Date:        12. Sep 2014
+  $Revision:    1.3.1
 
   $Project: Schema File for Package Description File Format Specification
 
@@ -42,11 +42,13 @@
       <xs:enumeration value="Actel:56"/>
       <xs:enumeration value="Altera:85"/>
       <xs:enumeration value="Altium:65"/>
+      <xs:enumeration value="Ambiq Micro:120"/>
       <xs:enumeration value="Analog Devices:1"/>
       <xs:enumeration value="ARM:82"/>
       <xs:enumeration value="ARM CMSIS:109"/>
       <xs:enumeration value="Atmel:3"/>
       <xs:enumeration value="Cypress:19"/>
+      <xs:enumeration value="Dialog Semiconductor:113"/>
       <xs:enumeration value="Dolphin:57"/>
       <xs:enumeration value="Domosys:26"/>
       <xs:enumeration value="Ember:98"/>
@@ -78,11 +80,12 @@
       <xs:enumeration value="SONiX:110"/>
       <xs:enumeration value="Spansion:100"/>
       <xs:enumeration value="STMicroelectronics:13"/>
+      <xs:enumeration value="Sunrise Micro Devices:121"/>
       <xs:enumeration value="TI:16"/>
       <xs:enumeration value="Texas Instruments:16"/>
       <xs:enumeration value="Toshiba:92"/>
       <xs:enumeration value="Triad Semiconductor:104"/>
-      <xs:enumeration value="Renesas:117"/>
+      <xs:enumeration value="WIZnet:122"/>
       <!-- deprecated: do not use -->
       <xs:enumeration value="Freescale Semiconductor:78"/>
       <xs:enumeration value="NXP (founded by Philips):11"/>
@@ -153,8 +156,9 @@
   <xs:complexType name="DebugVarsType">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute name="configfile" type="xs:string" use="optional"/>
-        <xs:attribute name="Pname"      type="xs:string" use="optional"/>
+        <xs:attribute name="configfile" type="xs:string"   use="optional"/>
+        <xs:attribute name="version"    type="VersionType" use="optional"/>
+        <xs:attribute name="Pname"      type="xs:string"   use="optional"/>
         <xs:anyAttribute processContents="lax"/>
       </xs:extension>
     </xs:simpleContent>
@@ -331,7 +335,7 @@
     <xs:attribute name="start"   type="NonNegativeInteger"  use="required"/>
     <!-- size specifies the size of the memory -->
     <xs:attribute name="size"    type="NonNegativeInteger"  use="required"/>
-    <!-- specifies whether the memory shall be initialized -->
+    <!-- !!! deprecated, do not use / ignore !!! specifies whether the memory shall be 0 initialized -->
     <xs:attribute name="init"    type="xs:boolean"          use="optional" default="0"/>
     <!-- specifies whether the memory is used as default by linker -->
     <xs:attribute name="default" type="xs:boolean"          use="optional" default="0"/>
@@ -467,6 +471,7 @@
       <xs:enumeration value="Cortex-M1"/>
       <xs:enumeration value="Cortex-M3"/>
       <xs:enumeration value="Cortex-M4"/>
+      <xs:enumeration value="Cortex-M7"/>
       <xs:enumeration value="Cortex-R4"/>
       <xs:enumeration value="Cortex-R5"/>
       <xs:enumeration value="Cortex-A5"/>
@@ -709,11 +714,12 @@
   <xs:simpleType name="CompilerEnumType">
     <xs:restriction base="xs:token">
       <xs:enumeration value="GCC"/>
-      <xs:enumeration value="G++"/>
       <xs:enumeration value="ARMCC"/>
       <xs:enumeration value="IAR"/>
       <xs:enumeration value="Tasking"/>
       <xs:enumeration value="GHS"/>
+      <xs:enumeration value="Cosmic"/>
+      <xs:enumeration value="G++"/> <!-- Code Sourcery -->
       <xs:enumeration value="*"/>
     </xs:restriction>
   </xs:simpleType>

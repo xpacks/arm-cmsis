@@ -11,8 +11,10 @@ IFS=$'\n\t'
 # RELEASE_ID="r3p2-00rel1"
 # RELEASE_VERSION="V4.00"
 # RELEASE_ID="r4p0-00rel0"
-RELEASE_VERSION="V4.1"
-RELEASE_ID="r4p1-00rel0"
+# RELEASE_VERSION="V4.1"
+# RELEASE_ID="r4p1-00rel0"
+RELEASE_VERSION="V4.2"
+RELEASE_ID="r4p2-00rel0"
 
 NAME_PREFIX="CMSIS-SP-00300-"
 RELEASE_NAME="${NAME_PREFIX}${RELEASE_ID}"
@@ -42,6 +44,7 @@ unzip -q "${LOCAL_ARCHIVE_FILE}"
 rm -rfv \
 CMSIS/*.rtf \
 CMSIS/Documentation \
+CMSIS/Driver/DriverTemplates \
 CMSIS/index.html \
 CMSIS/DSP_Lib \
 CMSIS/Lib \
@@ -82,6 +85,7 @@ To save space, the following folders/files were removed:
 
 * all non-portable *.exe files
 * CMSIS/Documentation
+* CMSIS/Driver/DriverTemplates
 * CMSIS/index.html
 * CMSIS/DSP_Lib
 * CMSIS/Lib

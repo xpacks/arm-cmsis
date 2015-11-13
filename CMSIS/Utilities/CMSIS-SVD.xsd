@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-  date: 04.07.2012
+  date: 26.08.2014
 
-  Copyright (C) 2011 - 2012 ARM Limited. All rights reserved.
+  Copyright (C) 2011 - 2014 ARM Limited. All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are met:
@@ -27,7 +27,12 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE.
 
-  This is CMSIS-SVD version 1.1
+  This is CMSIS-SVD 
+  Version 1.2:
+  Cortex-M7 support items have been added as optional tags for the device header file generation:
+  fpuDP, icachePresent, dcachePresent, itcmPresent, dtcmPresent
+  
+  Version 1.1:
   For backward compatibility all additional tags have been made optional.
   Extensions may be mandatory for successful device header file generation
   Other changes are related to some restructuring of the schema.
@@ -36,7 +41,7 @@
   reuse of descriptions for a series of devices.
  -->
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.2">
   <!-- stringType requires a none empty string of a least one character length -->
   <xs:simpleType name="stringType">
     <xs:restriction base="xs:string">
@@ -53,6 +58,7 @@
       <xs:enumeration value="CM3"/>
       <xs:enumeration value="SC300"/>
       <xs:enumeration value="CM4"/>
+      <xs:enumeration value="CM7"/>
       <xs:enumeration value="other"/>
     </xs:restriction>
   </xs:simpleType>
@@ -267,8 +273,18 @@
       <xs:element name="mpuPresent" type="xs:boolean"/>
       <!-- V1.1: fpuPresent specifies whether or not a floating point hardware unit is physically present -->
       <xs:element name="fpuPresent" type="xs:boolean"/>
+      <!-- V1.2: fpuDP specifies a double precision floating point hardware unit is physically present-->
+      <xs:element name="fpuDP" type="xs:boolean" minOccurs="0"/>
+      <!-- V1.2: icachePresent specifies that an instruction cache is physically present-->
+      <xs:element name="icachePresent" type="xs:boolean" minOccurs="0"/>
+      <!-- V1.2: dcachePresent specifies that a data cache is physically present-->
+      <xs:element name="dcachePresent" type="xs:boolean" minOccurs="0"/>
+      <!-- V1.2: itcmPresent specifies that an instruction tightly coupled memory is physically present-->
+      <xs:element name="itcmPresent" type="xs:boolean" minOccurs="0"/>
+      <!-- V1.2: dtcmPresent specifies that an data tightly coupled memory is physically present-->
+      <xs:element name="dtcmPresent" type="xs:boolean" minOccurs="0"/>
       <!-- V1.1: vtorPresent is used for Cortex-M0+ based devices only. It indicates whether the Vector Table Offset
-                 Register is implemented in the device or not -->				   
+                 Register is implemented in the device or not -->
       <xs:element name="vtorPresent" type="xs:boolean" minOccurs="0"/>
       <!-- V1.1: nvicPrioBits specifies the number of bits used by the Nested Vectored Interrupt Controller
                  for defining the priority level = # priority levels -->
@@ -517,7 +533,7 @@
           </xs:complexType>
         </xs:element>
       </xs:sequence>
-      <xs:attribute name="schemaVersion" type="xs:decimal" use="required" fixed="1.1"/>
+      <xs:attribute name="schemaVersion" type="xs:decimal" use="required" fixed="1.2"/>
     </xs:complexType>
   </xs:element>
 </xs:schema>
