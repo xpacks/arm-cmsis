@@ -15,8 +15,10 @@ IFS=$'\n\t'
 # RELEASE_ID="r4p1-00rel0"
 # RELEASE_VERSION="V4.2"
 # RELEASE_ID="r4p2-00rel0"
-RELEASE_VERSION="V4.3"
-RELEASE_ID="r4p3-00rel0"
+# RELEASE_VERSION="V4.3"
+# RELEASE_ID="r4p3-00rel0"
+RELEASE_VERSION="V4.4"
+RELEASE_ID="r4p4-00rel0"
 
 NAME_PREFIX="CMSIS-SP-00300-"
 RELEASE_NAME="${NAME_PREFIX}${RELEASE_ID}"
@@ -45,6 +47,7 @@ unzip -q "${LOCAL_ARCHIVE_FILE}"
 
 rm -rfv \
 CMSIS/*.rtf \
+CMSIS/DAP \
 CMSIS/Documentation \
 CMSIS/Driver/DriverTemplates \
 CMSIS/index.html \
@@ -53,6 +56,7 @@ CMSIS/Lib \
 CMSIS/Pack \
 CMSIS/RTOS/RTX/LIB \
 CMSIS/RTOS/RTX/index.html \
+CMSIS/RTOS/RTX/Tutorial \
 Device/_Template_Flash \
 Device/_Template_Vendor \
 Device/ARM/Documents \
@@ -85,6 +89,7 @@ These files were extracted from \`${ARCHIVE_NAME}\`.
 To save space, the following folders/files were removed:
 
 * all non-portable *.exe files
+* CMSIS/DAP
 * CMSIS/Documentation
 * CMSIS/Driver/DriverTemplates
 * CMSIS/index.html
@@ -92,6 +97,7 @@ To save space, the following folders/files were removed:
 * CMSIS/Lib
 * CMSIS/Pack
 * CMSIS/RTOS/RTX/LIB
+* CMSIS/RTOS/RTX/Tutorial
 * Device/_Template_Flash
 * Device/_Template_Vendor
 * Device/ARM/Documents
