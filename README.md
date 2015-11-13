@@ -5,7 +5,7 @@ includes the ARM CMSIS files.
 
 ## Version
 
-* V4.4
+* V4.5
 
 ## Documentation
 
@@ -16,7 +16,7 @@ The latest CMSIS documentation is available from
 
 The original files are available from the `originals` branch.
 
-These files were extracted from `CMSIS-SP-00300-r4p4-00rel0.zip`.
+These files were extracted from `CMSIS-SP-00300-r4p5-00rel0.zip`.
 
 To save space, the following folders/files were removed:
 

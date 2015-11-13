@@ -17,8 +17,10 @@ IFS=$'\n\t'
 # RELEASE_ID="r4p2-00rel0"
 # RELEASE_VERSION="V4.3"
 # RELEASE_ID="r4p3-00rel0"
-RELEASE_VERSION="V4.4"
-RELEASE_ID="r4p4-00rel0"
+# RELEASE_VERSION="V4.4"
+# RELEASE_ID="r4p4-00rel0"
+RELEASE_VERSION="V4.5"
+RELEASE_ID="r4p5-00rel0"
 
 NAME_PREFIX="CMSIS-SP-00300-"
 RELEASE_NAME="${NAME_PREFIX}${RELEASE_ID}"
@@ -45,10 +47,11 @@ fi
 
 unzip -q "${LOCAL_ARCHIVE_FILE}"
 
+rm -rf CMSIS/Documentation
+
 rm -rfv \
 CMSIS/*.rtf \
 CMSIS/DAP \
-CMSIS/Documentation \
 CMSIS/Driver/DriverTemplates \
 CMSIS/index.html \
 CMSIS/DSP_Lib \
