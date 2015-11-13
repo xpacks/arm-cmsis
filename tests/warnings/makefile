@@ -30,7 +30,7 @@ CPPWARNFLAGS=-Wabi -Wctor-dtor-privacy -Wnoexcept -Wnon-virtual-dtor \
 
 INCLUDES=-I"$(PARENT)/CMSIS/Include"
 
-all:			cm0 cm0plus cm3 cm4
+all:			cm0 cm0plus cm3 cm4 cm7
 
 cm0:			cm0c.o cm0pp.o
 
@@ -40,7 +40,9 @@ cm3:			cm3c.o cm3pp.o
 
 cm4:			cm4c.o cm4pp.o
 
-.PHONY:			all cm0 cm0plus cm3 cm4
+cm7:			cm7c.o cm7pp.o
+
+.PHONY:			all cm0 cm0plus cm3 cm4 cm7
 
 cm0c.o:			cm0.c
 	$(CC) -mcpu=cortex-m0 -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
@@ -64,4 +66,10 @@ cm4c.o:			cm4.c
 	$(CC) -mcpu=cortex-m4 -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
 
 cm4pp.o:		cm4.c
+	$(CPP) -mcpu=cortex-m4 -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
+
+cm7c.o:			cm7.c
+	$(CC) -mcpu=cortex-m4 -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
+
+cm7pp.o:		cm7.c
 	$(CPP) -mcpu=cortex-m4 -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
