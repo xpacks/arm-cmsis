@@ -27,3 +27,6 @@ To save space, the following folders/files were removed:
 * CMSIS/Lib
 * Device/_Template_Vendor
 
+## Changes
+
+Add /tests/warnings & run-tests.sh
