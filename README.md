@@ -5,7 +5,7 @@ includes the ARM CMSIS files.
 
 ## Version
 
-* V4.2
+* V4.3
 
 ## Documentation
 
@@ -16,7 +16,7 @@ The latest CMSIS documentation is available from
 
 The original files are available from the `originals` branch.
 
-These files were extracted from `CMSIS-SP-00300-r4p2-00rel0.zip`.
+These files were extracted from `CMSIS-SP-00300-r4p3-00rel0.zip`.
 
 To save space, the following folders/files were removed:
 
@@ -27,8 +27,7 @@ To save space, the following folders/files were removed:
 * CMSIS/DSP_Lib
 * CMSIS/Lib
 * CMSIS/Pack
-* CMSIS_RTX/Doc
-* CMSIS_RTX/LIB
+* CMSIS/RTOS/RTX/LIB
 * Device/_Template_Flash
 * Device/_Template_Vendor
 * Device/ARM/Documents

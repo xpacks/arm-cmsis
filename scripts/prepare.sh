@@ -13,8 +13,10 @@ IFS=$'\n\t'
 # RELEASE_ID="r4p0-00rel0"
 # RELEASE_VERSION="V4.1"
 # RELEASE_ID="r4p1-00rel0"
-RELEASE_VERSION="V4.2"
-RELEASE_ID="r4p2-00rel0"
+# RELEASE_VERSION="V4.2"
+# RELEASE_ID="r4p2-00rel0"
+RELEASE_VERSION="V4.3"
+RELEASE_ID="r4p3-00rel0"
 
 NAME_PREFIX="CMSIS-SP-00300-"
 RELEASE_NAME="${NAME_PREFIX}${RELEASE_ID}"
@@ -49,9 +51,8 @@ CMSIS/index.html \
 CMSIS/DSP_Lib \
 CMSIS/Lib \
 CMSIS/Pack \
-CMSIS_RTX/Doc \
-CMSIS_RTX/index.html \
-CMSIS_RTX/LIB \
+CMSIS/RTOS/RTX/LIB \
+CMSIS/RTOS/RTX/index.html \
 Device/_Template_Flash \
 Device/_Template_Vendor \
 Device/ARM/Documents \
@@ -90,8 +91,7 @@ To save space, the following folders/files were removed:
 * CMSIS/DSP_Lib
 * CMSIS/Lib
 * CMSIS/Pack
-* CMSIS_RTX/Doc
-* CMSIS_RTX/LIB
+* CMSIS/RTOS/RTX/LIB
 * Device/_Template_Flash
 * Device/_Template_Vendor
 * Device/ARM/Documents
