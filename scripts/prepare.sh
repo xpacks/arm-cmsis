@@ -7,8 +7,10 @@ IFS=$'\n\t'
 
 # RELEASE_VERSION="V3.01"
 # RELEASE_ID="r3p1-00rel0"
-RELEASE_VERSION="V3.20"
-RELEASE_ID="r3p2-00rel1"
+# RELEASE_VERSION="V3.20"
+# RELEASE_ID="r3p2-00rel1"
+RELEASE_VERSION="V4.00"
+RELEASE_ID="r4p0-00rel0"
 
 NAME_PREFIX="CMSIS-SP-00300-"
 RELEASE_NAME="${NAME_PREFIX}${RELEASE_ID}"
@@ -36,11 +38,19 @@ fi
 unzip -q "${LOCAL_ARCHIVE_FILE}"
 
 rm -rfv \
+CMSIS/*.rtf \
 CMSIS/Documentation \
 CMSIS/index.html \
 CMSIS/DSP_Lib \
 CMSIS/Lib \
+CMSIS/Pack/Example \
+CMSIS_RTX/Doc \
+CMSIS_RTX/index.html \
+CMSIS_RTX/LIB \
+Device/_Template_Flash \
 Device/_Template_Vendor \
+Device/ARM/Documents \
+Device/ARM/Flash \
 Version* \
 
 find . -name '*.exe' -exec rm \{} \;
@@ -73,6 +83,12 @@ To save space, the following folders/files were removed:
 * CMSIS/index.html
 * CMSIS/DSP_Lib
 * CMSIS/Lib
+* CMSIS/Pack/Example
+* CMSIS_RTX/Doc
+* CMSIS_RTX/LIB
+* Device/_Template_Flash
 * Device/_Template_Vendor
+* Device/ARM/Documents
+* Device/ARM/Flash
 
 EOF

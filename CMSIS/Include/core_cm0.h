@@ -1,13 +1,13 @@
 /**************************************************************************//**
  * @file     core_cm0.h
  * @brief    CMSIS Cortex-M0 Core Peripheral Access Layer Header File
- * @version  V3.20
- * @date     25. February 2013
+ * @version  V3.30
+ * @date     24. February 2014
  *
  * @note
  *
  ******************************************************************************/
-/* Copyright (c) 2009 - 2013 ARM LIMITED
+/* Copyright (c) 2009 - 2014 ARM LIMITED
 
    All rights reserved.
    Redistribution and use in source and binary forms, with or without
@@ -39,10 +39,6 @@
  #pragma system_include  /* treat file as system include file for MISRA check */
 #endif
 
-#ifdef __cplusplus
- extern "C" {
-#endif
-
 #ifndef __CORE_CM0_H_GENERIC
 #define __CORE_CM0_H_GENERIC
 
@@ -52,6 +48,10 @@
 #pragma GCC diagnostic ignored "-Wsign-conversion"
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
+#ifdef __cplusplus
+ extern "C" {
 #endif
 
 /** \page CMSIS_MISRA_Exceptions  MISRA-C:2004 Compliance Exceptions
@@ -89,19 +89,29 @@
   #define __INLINE         __inline                                   /*!< inline keyword for ARM Compiler       */
   #define __STATIC_INLINE  static __inline
 
-#elif defined ( __ICCARM__ )
-  #define __ASM            __asm                                      /*!< asm keyword for IAR Compiler          */
-  #define __INLINE         inline                                     /*!< inline keyword for IAR Compiler. Only available in High optimization mode! */
-  #define __STATIC_INLINE  static inline
-
 #elif defined ( __GNUC__ )
   #define __ASM            __asm                                      /*!< asm keyword for GNU Compiler          */
   #define __INLINE         inline                                     /*!< inline keyword for GNU Compiler       */
   #define __STATIC_INLINE  static inline
 
+#elif defined ( __ICCARM__ )
+  #define __ASM            __asm                                      /*!< asm keyword for IAR Compiler          */
+  #define __INLINE         inline                                     /*!< inline keyword for IAR Compiler. Only available in High optimization mode! */
+  #define __STATIC_INLINE  static inline
+
+#elif defined ( __TMS470__ )
+  #define __ASM            __asm                                      /*!< asm keyword for TI CCS Compiler       */
+  #define __STATIC_INLINE  static inline
+
 #elif defined ( __TASKING__ )
   #define __ASM            __asm                                      /*!< asm keyword for TASKING Compiler      */
   #define __INLINE         inline                                     /*!< inline keyword for TASKING Compiler   */
+  #define __STATIC_INLINE  static inline
+
+#elif defined ( __CSMC__ )		/* Cosmic */
+  #define __packed
+  #define __ASM            _asm                                      /*!< asm keyword for COSMIC Compiler      */
+  #define __INLINE         inline                                    /*use -pc99 on compile line !< inline keyword for COSMIC Compiler   */
   #define __STATIC_INLINE  static inline
 
 #endif
@@ -115,18 +125,28 @@
     #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
   #endif
 
-#elif defined ( __ICCARM__ )
-  #if defined __ARMVFP__
-    #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
-  #endif
-
 #elif defined ( __GNUC__ )
   #if defined (__VFP_FP__) && !defined(__SOFTFP__)
     #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
   #endif
 
+#elif defined ( __ICCARM__ )
+  #if defined __ARMVFP__
+    #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  #endif
+
+#elif defined ( __TMS470__ )
+  #if defined __TI__VFP_SUPPORT____
+    #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  #endif
+
 #elif defined ( __TASKING__ )
   #if defined __FPU_VFP__
+    #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  #endif
+
+#elif defined ( __CSMC__ )		/* Cosmic */
+  #if ( __CSMC__ & 0x400)		// FPU present for parser
     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
   #endif
 #endif
@@ -683,13 +703,13 @@ __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
 
 #endif /* __CORE_CM0_H_DEPENDANT */
 
+#ifdef __cplusplus
+}
+#endif
+
 // [ILG]
 #if defined ( __GNUC__ )
 #pragma GCC diagnostic pop
 #endif
 
 #endif /* __CMSIS_GENERIC */
-
-#ifdef __cplusplus
-}
-#endif
