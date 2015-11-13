@@ -30,3 +30,28 @@ To save space, the following folders/files were removed:
 ## Changes
 
 Add /tests/warnings & run-tests.sh
+
+Add pragmas to silence warnings.
+
+```
+#ifndef __CORE_CM4_H_GENERIC
+#define __CORE_CM4_H_GENERIC
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
+...
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
+#endif /* __CMSIS_GENERIC */
+
+```
