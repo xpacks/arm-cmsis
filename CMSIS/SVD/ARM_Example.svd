@@ -3,7 +3,7 @@
 <!-- File naming: <vendor>_<part/series name>.svd -->
 
 <!--
-  Copyright (C) 2012 ARM Limited. All rights reserved.
+  Copyright (C) 2012-2014 ARM Limited. All rights reserved.
 
   Purpose: System Viewer Description (SVD) Example (Schema Version 1.1)
            This is a description of a none-existent and incomplete device
@@ -33,10 +33,10 @@
   POSSIBILITY OF SUCH DAMAGE.
  -->
  
-<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd" >
+<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
   <vendor>ARM Ltd.</vendor>                                       <!-- device vendor name -->
   <vendorID>ARM</vendorID>                                        <!-- device vendor short name -->
-  <name>ARMCM3xxx</name>                                          <!-- name of part-->
+  <name>ARM_Example</name>                                        <!-- name of part-->
   <series>ARMCM3</series>                                         <!-- device series the device belongs to -->
   <version>1.2</version>                                          <!-- version of this description, adding CMSIS-SVD 1.1 tags -->
   <description>ARM 32-bit Cortex-M3 Microcontroller based device, CPU clock up to 80MHz, etc. </description>
@@ -132,7 +132,7 @@
               <access>write-only</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>Reserved</name>
+                  <name>No_Action</name>
                   <description>Write as ZERO if necessary</description>
                   <value>0</value>
                 </enumeratedValue>

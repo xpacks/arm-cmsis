@@ -2,7 +2,7 @@
  * @file     core_cm4.h
  * @brief    CMSIS Cortex-M4 Core Peripheral Access Layer Header File
  * @version  V3.30
- * @date     24. February 2014
+ * @date     06. May 2014
  *
  * @note
  *
@@ -69,7 +69,7 @@
 
 /*  CMSIS CM4 definitions */
 #define __CM4_CMSIS_VERSION_MAIN  (0x03)                                   /*!< [31:16] CMSIS HAL main version   */
-#define __CM4_CMSIS_VERSION_SUB   (0x20)                                   /*!< [15:0]  CMSIS HAL sub version    */
+#define __CM4_CMSIS_VERSION_SUB   (0x30)                                   /*!< [15:0]  CMSIS HAL sub version    */
 #define __CM4_CMSIS_VERSION       ((__CM4_CMSIS_VERSION_MAIN << 16) | \
                                     __CM4_CMSIS_VERSION_SUB          )     /*!< CMSIS HAL version number         */
 
@@ -675,7 +675,7 @@ typedef struct
 #define SysTick_CALIB_SKEW_Msk             (1UL << SysTick_CALIB_SKEW_Pos)                /*!< SysTick CALIB: SKEW Mask */
 
 #define SysTick_CALIB_TENMS_Pos             0                                             /*!< SysTick CALIB: TENMS Position */
-#define SysTick_CALIB_TENMS_Msk            (0xFFFFFFUL << SysTick_VAL_CURRENT_Pos)        /*!< SysTick CALIB: TENMS Mask */
+#define SysTick_CALIB_TENMS_Msk            (0xFFFFFFUL << SysTick_CALIB_TENMS_Pos)        /*!< SysTick CALIB: TENMS Mask */
 
 /*@} end of group CMSIS_SysTick */
 
@@ -1600,7 +1600,7 @@ __STATIC_INLINE uint32_t NVIC_GetPriority(IRQn_Type IRQn)
     The function encodes the priority for an interrupt with the given priority group,
     preemptive priority value, and subpriority value.
     In case of a conflict between priority grouping and available
-    priority bits (__NVIC_PRIO_BITS), the samllest possible priority group is set.
+    priority bits (__NVIC_PRIO_BITS), the smallest possible priority group is set.
 
     \param [in]     PriorityGroup  Used priority group.
     \param [in]   PreemptPriority  Preemptive priority value (starting from 0).
@@ -1628,7 +1628,7 @@ __STATIC_INLINE uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t P
     The function decodes an interrupt priority value with a given priority group to
     preemptive priority value and subpriority value.
     In case of a conflict between priority grouping and available
-    priority bits (__NVIC_PRIO_BITS) the samllest possible priority group is set.
+    priority bits (__NVIC_PRIO_BITS) the smallest possible priority group is set.
 
     \param [in]         Priority   Priority value, which can be retrieved with the function \ref NVIC_GetPriority().
     \param [in]     PriorityGroup  Used priority group.

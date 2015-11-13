@@ -1,8 +1,8 @@
 /* ----------------------------------------------------------------------
 * Copyright (C) 2010-2014 ARM Limited. All rights reserved.
 *
-* $Date:        20. February 2014
-* $Revision: 	V1.4.2
+* $Date:        12. March 2014
+* $Revision: 	V1.4.3
 *
 * Project: 	    CMSIS DSP Library
 * Title:	    arm_math.h
@@ -41,7 +41,8 @@
 /**
    \mainpage CMSIS DSP Software Library
    *
-   * <b>Introduction</b>
+   * Introduction
+   * ------------
    *
    * This user manual describes the CMSIS DSP software library,
    * a suite of common signal processing functions for use on Cortex-M processor based devices.
@@ -61,7 +62,8 @@
    * The library has separate functions for operating on 8-bit integers, 16-bit integers,
    * 32-bit integer and 32-bit floating-point values.
    *
-   * <b>Using the Library</b>
+   * Using the Library
+   * ------------
    *
    * The library installer contains prebuilt versions of the libraries in the <code>Lib</code> folder.
    * - arm_cortexM4lf_math.lib (Little endian and Floating Point Unit on Cortex-M4)
@@ -79,16 +81,19 @@
    * Define the appropriate pre processor MACRO ARM_MATH_CM4 or  ARM_MATH_CM3 or
    * ARM_MATH_CM0 or ARM_MATH_CM0PLUS depending on the target processor in the application.
    *
-   * <b>Examples</b>
+   * Examples
+   * --------
    *
    * The library ships with a number of examples which demonstrate how to use the library functions.
    *
-   * <b>Toolchain Support</b>
+   * Toolchain Support
+   * ------------
    *
    * The library has been developed and tested with MDK-ARM version 4.60.
    * The library is being tested in GCC and IAR toolchains and updates on this activity will be made available shortly.
    *
-   * <b>Building the Library</b>
+   * Building the Library
+   * ------------
    *
    * The library installer contains a project file to re build libraries on MDK-ARM Tool chain in the <code>CMSIS\\DSP_Lib\\Source\\ARM</code> folder.
    * - arm_cortexM_math.uvproj
@@ -96,7 +101,8 @@
    *
    * The libraries can be built by opening the arm_cortexM_math.uvproj project in MDK-ARM, selecting a specific target, and defining the optional pre processor MACROs detailed above.
    *
-   * <b>Pre-processor Macros</b>
+   * Pre-processor Macros
+   * ------------
    *
    * Each library project have differant pre-processor macros.
    *
@@ -125,9 +131,27 @@
    *
    * Initialize macro __FPU_PRESENT = 1 when building on FPU supported Targets. Enable this macro for M4bf and M4lf libraries
    *
-   * <b>Copyright Notice</b>
+   * <hr>
+   * CMSIS-DSP in ARM::CMSIS Pack
+   * -----------------------------
+   * 
+   * The following files relevant to CMSIS-DSP are present in the <b>ARM::CMSIS</b> Pack directories:
+   * |File/Folder                   |Content                                                                 |
+   * |------------------------------|------------------------------------------------------------------------|
+   * |\b CMSIS\\Documentation\\DSP  | This documentation                                                     |
+   * |\b CMSIS\\DSP_Lib             | Software license agreement (license.txt)                               |
+   * |\b CMSIS\\DSP_Lib\\Examples   | Example projects demonstrating the usage of the library functions      |
+   * |\b CMSIS\\DSP_Lib\\Source     | Source files for rebuilding the library                                |
+   * 
+   * <hr>
+   * Revision History of CMSIS-DSP
+   * ------------
+   * Please refer to \ref ChangeLog_pg.
    *
-   * Copyright (C) 2010-2013 ARM Limited. All rights reserved.
+   * Copyright Notice
+   * ------------
+   *
+   * Copyright (C) 2010-2014 ARM Limited. All rights reserved.
    */
 
 
@@ -7329,17 +7353,17 @@ void arm_rfft_fast_f32(
   #define IAR_ONLY_LOW_OPTIMIZATION_EXIT
 
 #elif defined(__CSMC__)		// Cosmic
- //SMMLA
-  #define multAcc_32x32_keep32_R(a, x, y) \
-  a += (q31_t) (((q63_t) x * y) >> 32)
+//SMMLA
+   #define multAcc_32x32_keep32_R(a, x, y) \
+   a += (q31_t) (((q63_t) x * y) >> 32)
 
  //SMMLS
-  #define multSub_32x32_keep32_R(a, x, y) \
-  a -= (q31_t) (((q63_t) x * y) >> 32)
+   #define multSub_32x32_keep32_R(a, x, y) \
+   a -= (q31_t) (((q63_t) x * y) >> 32)
 
 //SMMUL
-  #define mult_32x32_keep32_R(a, x, y) \
-  a = (q31_t) (((q63_t) x * y ) >> 32)
+   #define mult_32x32_keep32_R(a, x, y) \
+   a = (q31_t) (((q63_t) x * y ) >> 32)
 
 #define LOW_OPTIMIZATION_ENTER
 #define LOW_OPTIMIZATION_EXIT

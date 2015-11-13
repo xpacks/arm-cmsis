@@ -18,7 +18,7 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  *
- * $Date:        2. Jan 2014
+ * $Date:        20. May 2014
  * $Revision:    V2.00
  *
  * Project:      USB Host Driver definitions
@@ -41,14 +41,14 @@
  *    Namespace prefix ARM_ added
  *  Version 1.00
  *    Initial release
- */ 
+ */
 
 #ifndef __DRIVER_USBH_H
 #define __DRIVER_USBH_H
 
 #include "Driver_USB.h"
 
-#define ARM_USBH_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,0)  /* API version */
+#define ARM_USBH_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,00)  /* API version */
 
 
 /**
@@ -57,7 +57,7 @@
 typedef struct _ARM_USBH_PORT_STATE {
   uint32_t connected   : 1;             ///< USB Host Port connected flag
   uint32_t overcurrent : 1;             ///< USB Host Port overcurrent flag
-  uint32_t speed       : 2;             ///< USB Host Port speed setting
+  uint32_t speed       : 2;             ///< USB Host Port speed setting (ARM_USB_SPEED_xxx)
 } ARM_USBH_PORT_STATE;
 
 /**
@@ -66,28 +66,28 @@ typedef struct _ARM_USBH_PORT_STATE {
 typedef uint32_t ARM_USBH_EP_HANDLE;
 
 
-/****** USB Host Packet *****/
+/****** USB Host Packet Information *****/
 #define ARM_USBH_PACKET_TOKEN_Pos         0
 #define ARM_USBH_PACKET_TOKEN_Msk        (0x0FUL << ARM_USBH_PACKET_TOKEN_Pos)
-#define ARM_USBH_PACKET_SETUP            (0x01UL << ARM_USBH_PACKET_TOKEN_Pos)
-#define ARM_USBH_PACKET_OUT              (0x02UL << ARM_USBH_PACKET_TOKEN_Pos)
-#define ARM_USBH_PACKET_IN               (0x03UL << ARM_USBH_PACKET_TOKEN_Pos)
-#define ARM_USBH_PACKET_PING             (0x04UL << ARM_USBH_PACKET_TOKEN_Pos)
+#define ARM_USBH_PACKET_SETUP            (0x01UL << ARM_USBH_PACKET_TOKEN_Pos)  ///< SETUP Packet
+#define ARM_USBH_PACKET_OUT              (0x02UL << ARM_USBH_PACKET_TOKEN_Pos)  ///< OUT Packet
+#define ARM_USBH_PACKET_IN               (0x03UL << ARM_USBH_PACKET_TOKEN_Pos)  ///< IN Packet
+#define ARM_USBH_PACKET_PING             (0x04UL << ARM_USBH_PACKET_TOKEN_Pos)  ///< PING Packet
 
 #define ARM_USBH_PACKET_DATA_Pos          4
 #define ARM_USBH_PACKET_DATA_Msk         (0x0FUL << ARM_USBH_PACKET_DATA_Pos)
-#define ARM_USBH_PACKET_DATA0            (0x01UL << ARM_USBH_PACKET_DATA_Pos)
-#define ARM_USBH_PACKET_DATA1            (0x02UL << ARM_USBH_PACKET_DATA_Pos)
+#define ARM_USBH_PACKET_DATA0            (0x01UL << ARM_USBH_PACKET_DATA_Pos)   ///< DATA0 PID
+#define ARM_USBH_PACKET_DATA1            (0x02UL << ARM_USBH_PACKET_DATA_Pos)   ///< DATA1 PID
 
 #define ARM_USBH_PACKET_SPLIT_Pos         8
 #define ARM_USBH_PACKET_SPLIT_Msk        (0x0FUL << ARM_USBH_PACKET_SPLIT_Pos)
-#define ARM_USBH_PACKET_SSPLIT           (0x08UL << ARM_USBH_PACKET_SPLIT_Pos)
-#define ARM_USBH_PACKET_SSPLIT_S         (0x09UL << ARM_USBH_PACKET_SPLIT_Pos)
-#define ARM_USBH_PACKET_SSPLIT_E         (0x0AUL << ARM_USBH_PACKET_SPLIT_Pos)
-#define ARM_USBH_PACKET_SSPLIT_S_E       (0x0BUL << ARM_USBH_PACKET_SPLIT_Pos)
-#define ARM_USBH_PACKET_CSPLIT           (0x0CUL << ARM_USBH_PACKET_SPLIT_Pos)         
+#define ARM_USBH_PACKET_SSPLIT           (0x08UL << ARM_USBH_PACKET_SPLIT_Pos)  ///< SSPLIT Packet
+#define ARM_USBH_PACKET_SSPLIT_S         (0x09UL << ARM_USBH_PACKET_SPLIT_Pos)  ///< SSPLIT Packet: Data Start
+#define ARM_USBH_PACKET_SSPLIT_E         (0x0AUL << ARM_USBH_PACKET_SPLIT_Pos)  ///< SSPLIT Packet: Data End
+#define ARM_USBH_PACKET_SSPLIT_S_E       (0x0BUL << ARM_USBH_PACKET_SPLIT_Pos)  ///< SSPLIT Packet: Data All
+#define ARM_USBH_PACKET_CSPLIT           (0x0CUL << ARM_USBH_PACKET_SPLIT_Pos)  ///< CSPLIT Packet
 
-#define ARM_USBH_PACKET_PRE              (1UL << 12)
+#define ARM_USBH_PACKET_PRE              (1UL << 12)                            ///< PRE Token
 
 
 /****** USB Host Port Event *****/
@@ -191,7 +191,7 @@ typedef uint32_t ARM_USBH_EP_HANDLE;
   \param[in]   ep_addr    Endpoint Address
                 - ep_addr.0..3: Address
                 - ep_addr.7:    Direction
-  \param[in]   ep_type    Endpoint Type
+  \param[in]   ep_type    Endpoint Type (ARM_USB_ENDPOINT_xxx)
   \param[in]   ep_max_packet_size Endpoint Maximum Packet Size
   \param[in]   ep_interval        Endpoint Polling Interval
   \return      Endpoint Handle \ref ARM_USBH_EP_HANDLE
@@ -277,11 +277,11 @@ typedef void (*ARM_USBH_SignalEndpointEvent_t) (ARM_USBH_EP_HANDLE ep_hndl, uint
 \brief USB Host Driver Capabilities.
 */
 typedef struct _ARM_USBH_CAPABILITIES {
-  uint32_t port_mask           : 15;    ///< Root HUB available Ports Mask
-  uint32_t auto_split          :  1;    ///< Automatic SPLIT packet handling
-  uint32_t event_connect       :  1;    ///< Signal Connect event
-  uint32_t event_disconnect    :  1;    ///< Signal Disconnect event
-  uint32_t event_overcurrent   :  1;    ///< Signal Overcurrent event
+  uint32_t port_mask          : 15;     ///< Root HUB available Ports Mask
+  uint32_t auto_split         :  1;     ///< Automatic SPLIT packet handling
+  uint32_t event_connect      :  1;     ///< Signal Connect event
+  uint32_t event_disconnect   :  1;     ///< Signal Disconnect event
+  uint32_t event_overcurrent  :  1;     ///< Signal Overcurrent event
 } ARM_USBH_CAPABILITIES;
 
 
