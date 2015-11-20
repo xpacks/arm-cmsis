@@ -1,0 +1,87 @@
+{
+	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
+	"currentFolder": 
+	{
+		"isIncludeFolder": true
+	},
+
+	"nodes": [
+		{
+			"name": "driver",
+			"type": "component",
+			"nodes": [
+				{
+					"name": "usart",
+					"type": "interface"
+				},
+
+				{
+					"name": "spi",
+					"type": "interface"
+				},
+
+				{
+					"name": "sai",
+					"type": "interface"
+				},
+
+				{
+					"name": "i2c",
+					"type": "interface"
+				},
+
+				{
+					"name": "can",
+					"type": "interface"
+				},
+
+				{
+					"name": "flash",
+					"type": "interface"
+				},
+
+				{
+					"name": "mci",
+					"type": "interface"
+				},
+
+				{
+					"name": "nand",
+					"type": "interface"
+				},
+
+				{
+					"name": "ethernet",
+					"type": "component",
+					"nodes": [
+						{
+							"name": "mac",
+							"type": "interface"
+						},
+
+						{
+							"name": "phy",
+							"type": "interface"
+						}
+					]
+				},
+
+				{
+					"name": "usb",
+					"type": "component",
+					"nodes": [
+						{
+							"name": "device",
+							"type": "interface"
+						},
+
+						{
+							"name": "host",
+							"type": "interface"
+						}
+					]
+				}
+			]
+		}
+	]
+}

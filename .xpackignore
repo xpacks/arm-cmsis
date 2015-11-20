@@ -1,0 +1,5 @@
+@.gitinclude
+.project
+.cproject
+.settings/
+

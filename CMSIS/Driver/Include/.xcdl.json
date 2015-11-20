@@ -1,0 +1,114 @@
+{
+	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
+	"currentFolder": 
+	{
+		"isIncludeFolder": true
+	},
+
+	"nodes": [
+		{
+			"name": "Driver_CAN.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "can"
+		},
+
+		{
+			"name": "Driver_Common.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "driver"
+		},
+
+		{
+			"name": "Driver_ETH_MAC.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "ethernet/mac"
+		},
+
+		{
+			"name": "Driver_ETH_MAC.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "ethernet/phy"
+		},
+
+		{
+			"name": "Driver_ETH.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "ethernet"
+		},
+
+		{
+			"name": "Driver_Flash.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "flash"
+		},
+
+		{
+			"name": "Driver_I2C.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "i2c"
+		},
+
+		{
+			"name": "Driver_MCI.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "mci"
+		},
+
+		{
+			"name": "Driver_NAND.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "nand"
+		},
+
+		{
+			"name": "Driver_SAI.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "sai"
+		},
+
+		{
+			"name": "Driver_SPI.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "spi"
+		},
+
+		{
+			"name": "Driver_USART.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "usart"
+		},
+
+		{
+			"name": "Driver_USB.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "usb"
+		},
+
+		{
+			"name": "Driver_USBD.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "usb/device"
+		},
+
+		{
+			"name": "Driver_USBH.h",
+			"type": "file",
+			"subType": "header",
+			"parent": "usb/host"
+		}
+	]
+}

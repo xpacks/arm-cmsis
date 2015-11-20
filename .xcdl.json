@@ -1,0 +1,10 @@
+{
+	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
+	"nodes": [
+		{
+			"name": "core",
+			"type": "component",
+			"description": "CMSIS-Core component."
+		}
+	]
+}
