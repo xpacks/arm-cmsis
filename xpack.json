@@ -9,7 +9,7 @@
 		"url": "https://github.com/xpacks/arm-cmsis.git"
 	},
 
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"releases": [
 		{
 			"version": "4.5.0",
