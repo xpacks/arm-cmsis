@@ -1,13 +1,15 @@
 {
 	"$schema": "http://xcdl.github.io/schemas/xpack-1-1.json",
-	"name": "/ilg/arm/cmsis",
+	"name": "ilg-arm-cmsis",
 	"description": "CMSIS (Cortex Microcontroller Software Interface Standard).",
+	"xcdlFile": ".xcdl.json",
 	"repository": 
 	{
 		"type": "git",
 		"url": "https://github.com/xpacks/arm-cmsis.git"
 	},
 
+	"version": "0.1.0",
 	"releases": [
 		{
 			"version": "4.5.0",
@@ -26,9 +28,9 @@
 	],
 
 	"keywords": [
-		"ARM",
-		"CMSIS",
-		"Cortex-M"
+		"arm",
+		"cmsis",
+		"cortex-m"
 	],
 
 	"homepage": "https://github.com/xpacks/arm-cmsis",

@@ -1,5 +1,7 @@
 {
 	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
+	"name": "/ilg/arm/cmsis",
+	"description": "CMSIS (Cortex Microcontroller Software Interface Standard).",
 	"nodes": [
 		{
 			"name": "core",
