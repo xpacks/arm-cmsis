@@ -1,4 +1,4 @@
-@.gitinclude
+@.gitignore
 .project
 .cproject
 .settings/
