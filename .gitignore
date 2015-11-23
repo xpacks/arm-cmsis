@@ -1,3 +1,5 @@
 .DS_Store
 Thumbs.db
 settings/
+yotta_targets/
+upload.tar.gz

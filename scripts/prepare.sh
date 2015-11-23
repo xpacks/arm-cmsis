@@ -68,6 +68,9 @@ Version* \
 
 find . -name '*.exe' -exec rm \{} \;
 
+# Move license to the top folder, since it is needed in metadata files.
+mv CMSIS/CMSIS*.pdf .
+
 cat <<EOF >README.md
 # ARM CMSIS
 
