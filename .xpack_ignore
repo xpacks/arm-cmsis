@@ -1,5 +1,11 @@
 @.gitignore
+.DS_Store
+Thumbs.db
 .project
 .cproject
 .settings/
-
+upload.tar.gz
+yotta_targets/
+ARM.CMSIS.pdsc
+CMSIS/SVD
+CMSIS/Utilities

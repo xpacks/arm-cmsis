@@ -10,22 +10,26 @@
 		"cortex-m"
 	],
 
+	"extraIncludes": [
+		"CMSIS/Include",
+		"CMSIS/Driver/Include"
+	],
 	"author": "Liviu Ionescu <ilg@livius.net>",
 	"homepage": "https://github.com/xpacks/arm-cmsis",
-	"repository": 
+	"repository":
 	{
 		"url": "https://github.com/xpacks/arm-cmsis.git",
 		"type": "git"
 	},
 
-	"bugs": 
+	"bugs":
 	{
 		"url": "https://github.com/xpacks/arm-cmsis/issues"
 	},
 
-	"license": "SEE LICENSE IN CMSIS_END_USER_LICENCE_AGREEMENT.pdf",
-	"dependencies": 
+	"license": "LicenseRef-LICENSE.pdf",
+	"dependencies":
 	{
-		
+
 	}
 }

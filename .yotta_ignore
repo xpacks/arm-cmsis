@@ -6,3 +6,5 @@ Thumbs.db
 upload.tar.gz
 yotta_targets/
 ARM.CMSIS.pdsc
+CMSIS/SVD
+CMSIS/Utilities

@@ -3,3 +3,6 @@ Thumbs.db
 settings/
 upload.tar.gz
 yotta_targets/
+yotta_modules/
+build/
+.yotta.json

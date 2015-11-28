@@ -3,7 +3,7 @@
 	"name": "ilg-arm-cmsis",
 	"description": "CMSIS (Cortex Microcontroller Software Interface Standard).",
 	"xcdlFile": ".xcdl.json",
-	"repository": 
+	"repository":
 	{
 		"type": "git",
 		"url": "https://github.com/xpacks/arm-cmsis.git"
@@ -20,7 +20,7 @@
 				"https://github.com/xpacks/arm-cmsis/archive/4.5.0.zip"
 			],
 
-			"repository": 
+			"repository":
 			{
 				"tag": "4.5.0"
 			}
@@ -41,7 +41,7 @@
 		}
 	],
 
-	"license": "SEE LICENSE IN CMSIS_END_USER_LICENCE_AGREEMENT.pdf",
+	"license": "LicenseRef-LICENSE.pdf",
 	"maintainers": [
 		{
 			"name": "Liviu Ionescu",
@@ -63,6 +63,6 @@
 	],
 
 	"dependencies": [
-		
+
 	]
 }
