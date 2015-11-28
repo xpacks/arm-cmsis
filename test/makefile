@@ -28,48 +28,65 @@ CWARNFLAGS=-Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast
 CPPWARNFLAGS=-Wabi -Wctor-dtor-privacy -Wnoexcept -Wnon-virtual-dtor \
 -Wstrict-null-sentinel -Wsign-promo
 
-INCLUDES=-I"$(PARENT)/CMSIS/Include"
+INCLUDES=-I"$(PARENT)/CMSIS/Include" -I"$(PARENT)/CMSIS/Driver/Include"
 
-all:			cm0 cm0plus cm3 cm4 cm7
+all:			cm0 cm0plus cm3 cm4 cm7 driver-cm0 driver-cm4
 
-cm0:			cm0c.o cm0pp.o
+cm0:			cm0-a.o cm0-b.o
 
-cm0plus:		cm0plusc.o cm0pluspp.o
+cm0plus:		cm0plus-a.o cm0plus-b.o
 
-cm3:			cm3c.o cm3pp.o
+cm3:			cm3-a.o cm3-b.o
 
-cm4:			cm4c.o cm4pp.o
+cm4:			cm4-a.o cm4-b.o
 
-cm7:			cm7c.o cm7pp.o
+cm7:			cm7-a.o cm7-b.o
 
-.PHONY:			all cm0 cm0plus cm3 cm4 cm7
+driver-cm0:		driver-cm0-a.o driver-cm0-b.o 
 
-cm0c.o:			cm0.c
+driver-cm4:		driver-cm4-a.o driver-cm4-b.o 
+
+.PHONY:			all cm0 cm0plus cm3 cm4 cm7 driver-cm0
+
+cm0-a.o:		cm0-a.c
 	$(CC) -mcpu=cortex-m0 -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
 
-cm0pp.o:		cm0.c
+cm0-b.o:		cm0-b.cpp
 	$(CPP) -mcpu=cortex-m0 -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
 
-cm0plusc.o:		cm0plus.c
+cm0plus-a.o:	cm0plus-a.c
 	$(CC) -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
 
-cm0pluspp.o:	cm0plus.c
+cm0plus-b.o:	cm0plus-b.cpp
 	$(CPP) -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
 
-cm3c.o:			cm3.c
+cm3-a.o:		cm3-a.c
 	$(CC) -mcpu=cortex-m3 -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
 
-cm3pp.o:		cm3.c
+cm3-b.o:		cm3-b.cpp
 	$(CPP) -mcpu=cortex-m3 -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
 
-cm4c.o:			cm4.c
+cm4-a.o:		cm4-a.c
 	$(CC) -mcpu=cortex-m4 -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
 
-cm4pp.o:		cm4.c
+cm4-b.o:		cm4-b.cpp
 	$(CPP) -mcpu=cortex-m4 -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
 
-cm7c.o:			cm7.c
-	$(CC) -mcpu=cortex-m4 -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
+cm7-a.o:		cm7-a.c
+	$(CC) -mcpu=cortex-m7 -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
 
-cm7pp.o:		cm7.c
-	$(CPP) -mcpu=cortex-m4 -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
+cm7-b.o:		cm7-b.cpp
+	$(CPP) -mcpu=cortex-m7 -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
+
+driver-cm0-a.o:		driver-cm0-a.c
+	$(CC) -mcpu=cortex-m0 -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
+
+driver-cm0-b.o:		driver-cm0-b.cpp
+	$(CPP) -mcpu=cortex-m0 -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
+
+driver-cm4-a.o:		driver-cm4-a.c
+	$(CC) -mcpu=cortex-m0 -mthumb -mfloat-abi=soft $(CFLAGS) $(WARNFLAGS) $(CWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
+
+driver-cm4-b.o:		driver-cm4-b.cpp
+	$(CPP) -mcpu=cortex-m0 -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
+	

@@ -17,21 +17,27 @@
 #define __FPU_PRESENT             1
 #define __NVIC_PRIO_BITS          4
 
-typedef enum
-{
-/******  Cortex-M4 Processor Exceptions Numbers ****************************************************************/
-  NonMaskableInt_IRQn         = -14,
-  MemoryManagement_IRQn       = -12,
-  BusFault_IRQn               = -11,
-  UsageFault_IRQn             = -10,
-  SVCall_IRQn                 = -5,
-  DebugMonitor_IRQn           = -4,
-  PendSV_IRQn                 = -2,
-  SysTick_IRQn                = -1,
-} IRQn_Type;
+#include "armv7m-irqs.h"
 
 #include "core_cm4.h"
 
 #if (__CORTEX_M != 0x04)
 #error #__CORTEX_M __CORTEX_M
 #endif
+
+int
+main (int argc __attribute__((unused)), char* argv[] __attribute__((unused)))
+{
+  return 0;
+}
+
+void
+_exit (int code);
+
+void
+_exit (int code __attribute__((unused)))
+{
+  for (;;)
+    {
+    }
+}

@@ -1,4 +1,4 @@
-# Test compile warnings
+# Test if the headers compile
 
 Cross compile test files which include the CMSIS Core headers,
 with all warnings enabled,
@@ -19,7 +19,11 @@ To run the test, go to a temporary location (like `/tmp`) and start the script u
 ```
 PATH=/usr/local/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH
 cd /tmp
-bash /Users/ilg/My\ Files/MacBookPro\ Projects/xPacks/arm-cmsis.git/scripts/run-tests.sh
+bash /Users/ilg/My\ Files/MacBookPro\ Projects/xPacks/xpacks-repo.git/ilg/arm/arm-cmsis-xpack/scripts/run-tests.sh
 ```
 
 The script will create `xpacks/test/warnings`, copy the source files and compile them.
+
+The tests can be also executed with yota test, but run with the host compiler.
+
+

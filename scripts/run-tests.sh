@@ -24,9 +24,11 @@ rm -rf "${SUBFOLDER}/${PACK_NAME}"
 mkdir -p "${SUBFOLDER}/${PACK_NAME}"
 cd "${SUBFOLDER}/${PACK_NAME}"
 
-for f in "${PARENT_PATH}/tests"/*
+for f in "${PARENT_PATH}/test"/*
 do
   
+  if [ -d "$f" ]
+  then
   TEST_NAME=$(basename "$f")
   echo
   echo "Testing \"${TEST_NAME}\"..."
@@ -45,5 +47,13 @@ do
   
   echo
   echo "Testing \"${TEST_NAME}\" done."
+  fi
   
 done
+
+if [ -f "${PARENT_PATH}/test/makefile" ]
+then
+  mkdir -p test
+  cp ${PARENT_PATH}/test/* "test"
+  make --directory="test" PARENT="${PARENT_PATH}" TEST_NAME="test" all
+fi
