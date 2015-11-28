@@ -41,6 +41,12 @@
 #ifndef __DRIVER_FLASH_H
 #define __DRIVER_FLASH_H
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 #include "Driver_Common.h"
 
 #define ARM_FLASH_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,00)  /* API version */
@@ -190,5 +196,10 @@ typedef struct _ARM_DRIVER_FLASH {
   ARM_FLASH_STATUS       (*GetStatus)      (void);                                          ///< Pointer to \ref ARM_Flash_GetStatus : Get Flash status.
   ARM_FLASH_INFO *       (*GetInfo)        (void);                                          ///< Pointer to \ref ARM_Flash_GetInfo : Get Flash information.
 } const ARM_DRIVER_FLASH;
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 #endif /* __DRIVER_FLASH_H */

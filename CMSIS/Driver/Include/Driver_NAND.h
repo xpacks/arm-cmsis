@@ -45,6 +45,12 @@
 #ifndef __DRIVER_NAND_H
 #define __DRIVER_NAND_H
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 #include "Driver_Common.h"
 
 #define ARM_NAND_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,01)  /* API version */
@@ -399,5 +405,10 @@ typedef struct _ARM_DRIVER_NAND {
   ARM_NAND_STATUS       (*GetStatus)      (uint32_t dev_num);                                                 ///< Pointer to \ref ARM_NAND_GetStatus : Get NAND status.
   int32_t               (*InquireECC)     ( int32_t index, ARM_NAND_ECC_INFO *info);                          ///< Pointer to \ref ARM_NAND_InquireECC : Inquire about available ECC. 
 } const ARM_DRIVER_NAND;
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 #endif /* __DRIVER_NAND_H */

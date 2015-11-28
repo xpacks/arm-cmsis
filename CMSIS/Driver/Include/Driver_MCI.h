@@ -63,6 +63,12 @@
 #ifndef __DRIVER_MCI_H
 #define __DRIVER_MCI_H
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 #include "Driver_Common.h"
 
 #define ARM_MCI_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,02)  /* API version */
@@ -346,5 +352,10 @@ typedef struct _ARM_DRIVER_MCI {
   int32_t              (*Control)        (uint32_t control, uint32_t arg); ///< Pointer to \ref ARM_MCI_Control : Control MCI Interface.
   ARM_MCI_STATUS       (*GetStatus)      (void);                           ///< Pointer to \ref ARM_MCI_GetStatus : Get MCI status.
 } const ARM_DRIVER_MCI;
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 #endif /* __DRIVER_MCI_H */

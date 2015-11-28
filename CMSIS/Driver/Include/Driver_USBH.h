@@ -50,6 +50,12 @@
 #ifndef __DRIVER_USBH_H
 #define __DRIVER_USBH_H
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 #include "Driver_USB.h"
 
 #define ARM_USBH_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,01)  /* API version */
@@ -402,5 +408,10 @@ typedef struct _ARM_DRIVER_USBH_HCI {
 } const ARM_DRIVER_USBH_HCI;
 
 #endif /* __DOXYGEN_MW__ */
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 #endif /* __DRIVER_USBH_H */

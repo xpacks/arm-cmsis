@@ -55,6 +55,12 @@
 #ifndef __DRIVER_ETH_MAC_H
 #define __DRIVER_ETH_MAC_H
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 #include "Driver_ETH.h"
 
 #define ARM_ETH_MAC_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,01)  /* API version */
@@ -297,5 +303,10 @@ typedef struct _ARM_DRIVER_ETH_MAC {
   int32_t                  (*PHY_Read)        (uint8_t phy_addr, uint8_t reg_addr, uint16_t *data);  ///< Pointer to \ref ARM_ETH_MAC_PHY_Read : Read Ethernet PHY Register through Management Interface.
   int32_t                  (*PHY_Write)       (uint8_t phy_addr, uint8_t reg_addr, uint16_t  data);  ///< Pointer to \ref ARM_ETH_MAC_PHY_Write : Write Ethernet PHY Register through Management Interface.
 } const ARM_DRIVER_ETH_MAC;
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 #endif /* __DRIVER_ETH_MAC_H */

@@ -56,6 +56,12 @@
 #ifndef __DRIVER_USART_H
 #define __DRIVER_USART_H
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 #include "Driver_Common.h"
 
 #define ARM_USART_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,02)  /* API version */
@@ -326,5 +332,10 @@ typedef struct _ARM_DRIVER_USART {
   int32_t                (*SetModemControl) (ARM_USART_MODEM_CONTROL control);   ///< Pointer to \ref ARM_USART_SetModemControl : Set USART Modem Control line state.
   ARM_USART_MODEM_STATUS (*GetModemStatus)  (void);                              ///< Pointer to \ref ARM_USART_GetModemStatus : Get USART Modem Status lines state.
 } const ARM_DRIVER_USART;
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 #endif /* __DRIVER_USART_H */

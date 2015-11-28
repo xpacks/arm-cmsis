@@ -32,6 +32,12 @@
 #ifndef __DRIVER_CAN_H
 #define __DRIVER_CAN_H
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 #include "Driver_Common.h"
 
 #define ARM_CAN_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(1,0)/* API version */
@@ -357,5 +363,10 @@ typedef struct _ARM_DRIVER_CAN {
                                                      uint32_t                 arg);     ///< Pointer to \ref ARM_CAN_Control               : Control CAN interface.
   ARM_CAN_STATUS           (*GetStatus)             (void);                             ///< Pointer to \ref ARM_CAN_GetStatus             : Get CAN status.
 } const ARM_DRIVER_CAN;
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 #endif /* __DRIVER_CAN_H */

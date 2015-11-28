@@ -37,6 +37,12 @@
 #ifndef __DRIVER_ETH_H
 #define __DRIVER_ETH_H
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 #include "Driver_Common.h"
 
 /**
@@ -81,5 +87,10 @@ typedef struct _ARM_ETH_LINK_INFO {
 typedef struct _ARM_ETH_MAC_ADDR {
   uint8_t b[6];                         ///< MAC Address (6 bytes), MSB first
 } ARM_ETH_MAC_ADDR;
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 #endif /* __DRIVER_ETH_H */
