@@ -14,16 +14,16 @@ CPPWARNFLAGS=-Wabi -Wctor-dtor-privacy -Wnoexcept -Wnon-virtual-dtor \
 -Wstrict-null-sentinel -Wsign-promo
 ```
 
-To run the test, go to a temporary location (like `/tmp`) and start the script using an absolute path:
+To run the test, go to the packet folder and start the script:
 
 ```
 PATH=/usr/local/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH
-cd /tmp
-bash /Users/ilg/My\ Files/MacBookPro\ Projects/xPacks/xpacks-repo.git/ilg/arm/arm-cmsis-xpack/scripts/run-tests.sh
+cd arm-cmsis-pack
+bash ../../../scripts/run-tests.sh
 ```
 
-The script will create `xpacks/test/warnings`, copy the source files and compile them.
+The script will create `build/test`, copy the source files and compile them.
 
-The tests can be also executed with yota test, but run with the host compiler.
+The tests can be also executed with yota test, but will run with the host compiler.
 
 
