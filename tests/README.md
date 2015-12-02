@@ -22,8 +22,6 @@ cd arm-cmsis-pack
 bash ../../../scripts/run-tests.sh
 ```
 
-The script will create `build/test`, copy the source files and compile them.
-
-The tests can be also executed with yota test, but will run with the host compiler.
+The script will create `build/tests`, copy the source files and compile them.
 
 
