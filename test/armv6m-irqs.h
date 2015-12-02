@@ -1,3 +1,8 @@
+//
+// Copyright (c) 2015 Liviu Ionescu.
+// This file is part of the xPacks project (https://xpacks.github.io).
+//
+
 #ifndef _ARMV6M_IRQS_H
 #define _ARMV6M_IRQS_H
 
