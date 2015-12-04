@@ -6,14 +6,15 @@ An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE headers, the
 
 [ARM CMSIS](https://github.com/xpacks/arm-cmsis) package details:
 
-* unique name: `ilg-arm-cmsis`
 * type: [xcdl](http://xcdl.github.io)
-* git repository: https://github.com/xpacks/arm-cmsis.git
+* yotta name: `ilg-arm-cmsis`, [repo](http://yotta.mbed.com/#/module/ilg-arm-cmsis/4.5.0-5)
+* git repo: https://github.com/xpacks/arm-cmsis.git
+* homepage: https://github.com/xpacks/arm-cmsis
 * latest archive: [zip](https://github.com/xpacks/arm-cmsis/archive/xpack.zip)
 
 ## Version
 
-* 4.5.0-4
+* 4.5.0-5
 
 ## Releases
 
@@ -44,16 +45,16 @@ An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE headers, the
 
 ## License
 
-* custom, see `LICENSE.pdf` in package
+* custom, see `LICENSE.pdf` in package root
 
 --- 
 ## Documentation
 
-To save space, this package does not contain documentation files. The latest CMSIS documentation is available from [keil.com](http://www.keil.com/cmsis).
+To save space, this package does not contain documentation files. The current CMSIS documentation is available from [keil.com](http://www.keil.com/cmsis).
 
 ## SVD schemas
 
-Although not required by the builds, the SVD schema files are available from the `CMSIS/Utilities` folder.
+Although not required by the builds, the SVD schema files are available in the `CMSIS/Utilities` folder.
 
 ## ARM devices
 
@@ -84,11 +85,11 @@ To save space, the following folders/files were removed:
 
 ## Changes
 
-The actual files used by this package are in the repository `xpack` branch.
+The actual files used by this package are in the `xpack` repository branch.
 
-Most of the files should be unchanged, with the following exceptions:
+Most of the files are unchanged, with the following exceptions:
 
-* the `core_cm*.h` files were edited and pragmas were added to silence warnings:
+* the `core_cm*.h` files were edited and pragmas were added to silence the warnings:
 
 ```
 #ifndef __CORE_CM4_H_GENERIC
@@ -115,7 +116,7 @@ Most of the files should be unchanged, with the following exceptions:
 
 ## Tests
 
-Compile only, `arm-none-eabi`, with most warnings enabled:
+Compile only tests, using the `arm-none-eabi` toolchain, with most warnings enabled:
 
 * each CORE header is compiled with both C and C++, for the proper core (M0, M0+, M3, M4, M7);
 * all driver headers are compiled with both C and C++, for M0 and M4.
