@@ -1,6 +1,6 @@
 # ARM CMSIS
 
-An xPack with a selection of **ARM CMSIS** files, mainly the CMSIS CORE and the CMSIS Driver headers.
+An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE and the CMSIS Driver headers.
 
 ## Package
 
@@ -13,7 +13,7 @@ An xPack with a selection of **ARM CMSIS** files, mainly the CMSIS CORE and the 
 
 ## Version
 
-* 4.5.0-2
+* 4.5.0-3
 
 ## Releases
 

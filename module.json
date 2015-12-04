@@ -1,7 +1,7 @@
 {
 	"name": "ilg-arm-cmsis",
-	"description": "An xPack with a selection of **ARM CMSIS** files, mainly the CMSIS CORE and the CMSIS Driver headers.",
-	"version": "4.5.0-2",
+	"description": "An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE and the CMSIS Driver headers.",
+	"version": "4.5.0-3",
 	"keywords": [
 		"arm",
 		"cmsis",
