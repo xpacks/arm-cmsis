@@ -1,13 +1,20 @@
 ## Documentation
 
-The latest CMSIS documentation is available from
-[keil.com](http://www.keil.com/cmsis).
+To save space, this package does not contain documentation files. The latest CMSIS documentation is available from [keil.com](http://www.keil.com/cmsis).
+
+## SVD schemas
+
+Although not required by the builds, the SVD schema files are available from the `CMSIS/Utilities` folder.
+
+## ARM devices
+
+Also for informative purposes, the support code (headers, startup, linker script, SVD, etc) for the ARM specific devices (ARMCM0, ARMCM0plus, ARMCM3, ARMCM4, ARMCM7, ARMCSC000, ARMCSC300) is available in the `Device/ARM` folder.
 
 ## Original files
 
-The original files are available from the `originals` branch.
+The ARM original files are kept in the repository `originals` branch, updated with each new release, and merged into the `xpack` branch (three-way merge).
 
-These files were extracted from `CMSIS-SP-00300-r4p5-00rel0.zip`.
+The current files were extracted from the `CMSIS-SP-00300-r4p5-00rel0.zip` archive.
 
 To save space, the following folders/files were removed:
 
@@ -27,6 +34,10 @@ To save space, the following folders/files were removed:
 * Device/ARM/Flash
 
 ## Changes
+
+The actual files used by this package are in the repository `xpack` branch.
+
+Most of the files should be unchanged, with the following exceptions:
 
 * the `core_cm*.h` files were edited and pragmas were added to silence warnings:
 

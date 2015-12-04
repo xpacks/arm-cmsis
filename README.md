@@ -1,6 +1,6 @@
 # ARM CMSIS
 
-An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE and the CMSIS Driver headers.
+An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE headers, the CMSIS Driver headers and the RTX sources.
 
 ## Package
 
@@ -13,7 +13,7 @@ An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE and the CMSI
 
 ## Version
 
-* 4.5.0-3
+* 4.5.0-4
 
 ## Releases
 
@@ -21,12 +21,12 @@ An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE and the CMSI
 
 ## Package maintainers
 
-* Liviu Ionescu <ilg@livius.net> ([web](http://liviusdotnet.worldpress.com))
+* [Liviu Ionescu](http://liviusdotnet.worldpress.com) <ilg@livius.net>
 
 ## Content contributors
 
 * ARM
-* Liviu Ionescu <ilg@livius.net> ([web](http://liviusdotnet.worldpress.com))
+* [Liviu Ionescu](http://liviusdotnet.worldpress.com) <ilg@livius.net>
 
 ## Support
 
@@ -44,18 +44,26 @@ An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE and the CMSI
 
 ## License
 
-* LicenseRef-LICENSE.pdf
+* custom, see `LICENSE.pdf` in package
 
+--- 
 ## Documentation
 
-The latest CMSIS documentation is available from
-[keil.com](http://www.keil.com/cmsis).
+To save space, this package does not contain documentation files. The latest CMSIS documentation is available from [keil.com](http://www.keil.com/cmsis).
+
+## SVD schemas
+
+Although not required by the builds, the SVD schema files are available from the `CMSIS/Utilities` folder.
+
+## ARM devices
+
+Also for informative purposes, the support code (headers, startup, linker script, SVD, etc) for the ARM specific devices (ARMCM0, ARMCM0plus, ARMCM3, ARMCM4, ARMCM7, ARMCSC000, ARMCSC300) is available in the `Device/ARM` folder.
 
 ## Original files
 
-The original files are available from the `originals` branch.
+The ARM original files are kept in the repository `originals` branch, updated with each new release, and merged into the `xpack` branch (three-way merge).
 
-These files were extracted from `CMSIS-SP-00300-r4p5-00rel0.zip`.
+The current files were extracted from the `CMSIS-SP-00300-r4p5-00rel0.zip` archive.
 
 To save space, the following folders/files were removed:
 
@@ -75,6 +83,10 @@ To save space, the following folders/files were removed:
 * Device/ARM/Flash
 
 ## Changes
+
+The actual files used by this package are in the repository `xpack` branch.
+
+Most of the files should be unchanged, with the following exceptions:
 
 * the `core_cm*.h` files were edited and pragmas were added to silence warnings:
 
@@ -109,3 +121,4 @@ Compile only, `arm-none-eabi`, with most warnings enabled:
 * all driver headers are compiled with both C and C++, for M0 and M4.
 
 
+--- 
