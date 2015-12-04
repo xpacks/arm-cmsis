@@ -1,37 +1,8 @@
 # ARM CMSIS
 
-This project, available from [GitHub](https://github.com/xpacks),
+This project, available from [GitHub](https://github.com/xpacks/arm-cmsis),
 includes the ARM CMSIS files.
 
-## Version
+The `originals` branch follows the offcial ARM distribution.
 
-* V4.5
-
-## Documentation
-
-The latest CMSIS documentation is available from
-[keil.com](http://www.keil.com/cmsis).
-
-## Original files
-
-The original files are available from the `originals` branch.
-
-These files were extracted from `CMSIS-SP-00300-r4p5-00rel0.zip`.
-
-To save space, the following folders/files were removed:
-
-* all non-portable *.exe files
-* CMSIS/DAP
-* CMSIS/Documentation
-* CMSIS/Driver/DriverTemplates
-* CMSIS/index.html
-* CMSIS/DSP_Lib
-* CMSIS/Lib
-* CMSIS/Pack
-* CMSIS/RTOS/RTX/LIB
-* CMSIS/RTOS/RTX/Tutorial
-* Device/_Template_Flash
-* Device/_Template_Vendor
-* Device/ARM/Documents
-* Device/ARM/Flash
-
+For more info, please check the `xpack` branch, where the actual files are stored.
