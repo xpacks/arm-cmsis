@@ -21,16 +21,14 @@ To save space, the following folders/files were removed:
 * CMSIS/Pack
 * CMSIS/RTOS/RTX/LIB
 * CMSIS/RTOS/RTX/Tutorial
-* Device/_Template_Flash
-* Device/_Template_Vendor
+* Device/\_Template\_Flash
+* Device/\_Template\_Vendor
 * Device/ARM/Documents
 * Device/ARM/Flash
 
 ## Changes
 
-Add /tests/warnings & run-tests.sh
-
-Add pragmas to silence warnings.
+* the `core_cm*.h` files were edited and pragmas were added to silence warnings:
 
 ```
 #ifndef __CORE_CM4_H_GENERIC
@@ -54,3 +52,11 @@ Add pragmas to silence warnings.
 #endif /* __CMSIS_GENERIC */
 
 ```
+
+## Tests
+
+Compile only, `arm-none-eabi`, with most warnings enabled:
+
+* each CORE header is compiled with both C and C++, for the proper core (M0, M0+, M3, M4, M7);
+* all driver headers are compiled with both C and C++, for M0 and M4.
+

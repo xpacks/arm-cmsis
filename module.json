@@ -1,7 +1,7 @@
 {
 	"name": "ilg-arm-cmsis",
-	"description": "ARM CMSIS (Cortex Microcontroller Software Interface Standard) files (mainly the CMSIS CORE and the CMSIS Driver headers).",
-	"version": "4.5.0-1",
+	"description": "An xPack with a selection of **ARM CMSIS** files, mainly the CMSIS CORE and the CMSIS Driver headers.",
+	"version": "4.5.0-2",
 	"keywords": [
 		"arm",
 		"cmsis",
