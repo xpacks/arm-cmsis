@@ -1,50 +1,3 @@
-# ARM CMSIS
-
-ARM CMSIS (Cortex Microcontroller Software Interface Standard) files (mainly the CMSIS CORE and the CMSIS Driver headers).
-
-## Package
-
-[ARM CMSIS](https://github.com/xpacks/arm-cmsis) package details:
-
-* unique name: `ilg-arm-cmsis`
-* current repository: [git](https://github.com/xpacks/arm-cmsis.git)
-* latest archive: [zip](https://github.com/xpacks/arm-cmsis/archive/xpack.zip)
-
-## Version
-
-* 4.5.0-1
-
-## Releases
-
-* none
-
-## Package maintainers
-
-* Liviu Ionescu <ilg@livius.net> ([web](http://liviusdotnet.worldpress.com))
-
-## Content contributors
-
-* ARM
-* Liviu Ionescu <ilg@livius.net> ([web](http://liviusdotnet.worldpress.com))
-
-## Support
-
-* [all issues](https://github.com/xpacks/arm-cmsis/issues)
-
-## Dependencies
-
-* none
-
-## Keywords
-
-* arm
-* cmsis
-* cortex-m
-
-## License
-
-* LicenseRef-LICENSE.pdf
-
 ## Documentation
 
 The latest CMSIS documentation is available from
@@ -101,4 +54,3 @@ Add pragmas to silence warnings.
 #endif /* __CMSIS_GENERIC */
 
 ```
-
