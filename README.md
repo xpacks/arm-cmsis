@@ -7,14 +7,15 @@ An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE headers, the
 [ARM CMSIS](https://github.com/xpacks/arm-cmsis) package details:
 
 * type: [xcdl](http://xcdl.github.io)
-* yotta name: `ilg-arm-cmsis`, [repo](http://yotta.mbed.com/#/module/ilg-arm-cmsis/4.5.0-5)
+* yotta name: `ilg-arm-cmsis`
+* yotta repo: http://yotta.mbed.com/#/module/ilg-arm-cmsis/4.5.0-6
 * git repo: https://github.com/xpacks/arm-cmsis.git
 * homepage: https://github.com/xpacks/arm-cmsis
-* latest archive: [zip](https://github.com/xpacks/arm-cmsis/archive/xpack.zip)
+* latest archive: https://github.com/xpacks/arm-cmsis/archive/xpack.zip
 
 ## Version
 
-* 4.5.0-5
+* 4.5.0-6
 
 ## Releases
 
@@ -22,12 +23,12 @@ An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE headers, the
 
 ## Package maintainers
 
-* [Liviu Ionescu](http://liviusdotnet.worldpress.com) <ilg@livius.net>
+* [Liviu Ionescu](http://liviusdotnet.worldpress.com) [<ilg@livius.net>](mailto:ilg@livius.net)
 
 ## Content contributors
 
 * ARM
-* [Liviu Ionescu](http://liviusdotnet.worldpress.com) <ilg@livius.net>
+* [Liviu Ionescu](http://liviusdotnet.worldpress.com) [<ilg@livius.net>](mailto:ilg@livius.net)
 
 ## Support
 

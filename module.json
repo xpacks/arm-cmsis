@@ -1,7 +1,7 @@
 {
 	"name": "ilg-arm-cmsis",
 	"description": "An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE headers, the CMSIS Driver headers and the RTX sources.",
-	"version": "4.5.0-5",
+	"version": "4.5.0-6",
 	"keywords": [
 		"arm",
 		"cmsis",
