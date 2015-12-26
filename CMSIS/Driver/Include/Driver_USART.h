@@ -61,6 +61,10 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"
 #endif
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
 #include "Driver_Common.h"
 
@@ -334,6 +338,9 @@ typedef struct _ARM_DRIVER_USART {
 } const ARM_DRIVER_USART;
 
 // [ILG]
+#ifdef __cplusplus
+}
+#endif
 #if defined ( __GNUC__ )
 #pragma GCC diagnostic pop
 #endif
