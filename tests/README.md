@@ -17,7 +17,7 @@ CPPWARNFLAGS=-Wabi -Wctor-dtor-privacy -Wnoexcept -Wnon-virtual-dtor \
 To run the test, go to the packet folder and start the script:
 
 ```
-PATH=/usr/local/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH
+PATH=/usr/local/gcc-arm-none-eabi-5_2-2015q4/bin:$PATH
 cd arm-cmsis-pack
 bash ../../../scripts/run-tests.sh
 ```
