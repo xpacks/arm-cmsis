@@ -43,6 +43,12 @@
 
 #define ARM_DRIVER_VERSION_MAJOR_MINOR(major,minor) (((major) << 8) | (minor))
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 /**
 \brief Driver Version
 */
@@ -50,6 +56,11 @@ typedef struct _ARM_DRIVER_VERSION {
   uint16_t api;                         ///< API version
   uint16_t drv;                         ///< Driver version
 } ARM_DRIVER_VERSION;
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /* General return codes */
 #define ARM_DRIVER_OK                 0 ///< Operation succeeded 

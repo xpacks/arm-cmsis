@@ -37,12 +37,6 @@
 #ifndef __DRIVER_USB_H
 #define __DRIVER_USB_H
 
-// [ILG]
-#if defined ( __GNUC__ )
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wpadded"
-#endif
-
 #include "Driver_Common.h"
 
 /* USB Role */
@@ -97,10 +91,5 @@
 #define ARM_USB_ENDPOINT_MICROFRAME_TRANSACTIONS_1      0x0000
 #define ARM_USB_ENDPOINT_MICROFRAME_TRANSACTIONS_2      0x0800
 #define ARM_USB_ENDPOINT_MICROFRAME_TRANSACTIONS_3      0x1000
-
-// [ILG]
-#if defined ( __GNUC__ )
-#pragma GCC diagnostic pop
-#endif
 
 #endif /* __DRIVER_USB_H */
