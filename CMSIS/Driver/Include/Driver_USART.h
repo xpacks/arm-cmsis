@@ -53,8 +53,11 @@
  *    Initial release
  */
 
-#ifndef __DRIVER_USART_H
-#define __DRIVER_USART_H
+// [ILG]
+// #ifndef __DRIVER_USART_H
+// #define __DRIVER_USART_H
+#ifndef DRIVER_USART_H_
+#define DRIVER_USART_H_
 
 // [ILG]
 #if defined ( __GNUC__ )
@@ -345,4 +348,4 @@ typedef struct _ARM_DRIVER_USART {
 #pragma GCC diagnostic pop
 #endif
 
-#endif /* __DRIVER_USART_H */
+#endif /* DRIVER_USART_H_ */
