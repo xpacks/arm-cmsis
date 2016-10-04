@@ -34,8 +34,11 @@
  *    Initial release
  */
 
-#ifndef __DRIVER_USB_H
-#define __DRIVER_USB_H
+// [ILG]
+// #ifndef __DRIVER_USB_H
+// #define __DRIVER_USB_H
+#ifndef DRIVER_USB_H_
+#define DRIVER_USB_H_
 
 #include "Driver_Common.h"
 

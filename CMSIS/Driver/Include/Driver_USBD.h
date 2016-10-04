@@ -42,8 +42,11 @@
  *    Initial release
  */
 
-#ifndef __DRIVER_USBD_H
-#define __DRIVER_USBD_H
+// [ILG]
+// #ifndef __DRIVER_USBD_H
+// #define __DRIVER_USBD_H
+#ifndef DRIVER_USBD_H_
+#define DRIVER_USBD_H_
 
 // [ILG]
 #if defined ( __GNUC__ )
