@@ -12,7 +12,6 @@ do_add_arm_cmsis_xpack() {
   do_tell_xpack "${pack_name}-xpack"
 
   do_select_pack_folder "ilg/${pack_name}.git"
-  do_check_xpacks "${pack_name}"
 
   # Always add 'core'.
   do_prepare_dest "${pack_name}/include/core"
