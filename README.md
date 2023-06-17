@@ -1,126 +1,163 @@
-# ARM CMSIS
+![GitHub package.json version](https://img.shields.io/github/package-json/v/xpacks/arm-cmsis)](https://github.com/xpacks/arm-cmsis/blob/xpack/package.json)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xpacks/arm-cmsis)](https://github.com/xpacks/arm-cmsis/tags/)
+[[![license](https://img.shields.io/github/license/xpacks/arm-cmsis)](https://github.com/xpacks/arm-cmsis/blob/xpack/LICENSE)
 
-An xPack with a selection of ARM CMSIS files, mainly the CMSIS CORE headers, the CMSIS Driver headers and the RTX sources.
+# A source code library with a selection of Arm CMSIS files
 
-## Package
+This project provides support for running µOS++ on Cortex-M devices.
 
-[ARM CMSIS](https://github.com/xpacks/arm-cmsis) package details:
+The project is hosted on GitHub as
+[xpacks/arm-cmsis](https://github.com/xpacks/arm-cmsis).
 
-* type: [xcdl](http://xcdl.github.io)
-* yotta name: `ilg-arm-cmsis`
-* yotta repo: http://yotta.mbed.com/#/module/ilg-arm-cmsis/4.5.0-6
-* git repo: https://github.com/xpacks/arm-cmsis.git
-* homepage: https://github.com/xpacks/arm-cmsis
-* latest archive: https://github.com/xpacks/arm-cmsis/archive/xpack.zip
+## Maintainer info
 
-## Version
+This page is addressed to developers who plan to include this source
+library into their own projects.
 
-* 4.5.0-6
+For maintainer info, please see the
+[README-MAINTAINER](README-MAINTAINER.md) file.
 
-## Releases
+## Install
 
-* none
+As a source library xPack, the easiest way to add it to a project is via
+**xpm**, but it can also be used as any Git project, for example as a submodule.
 
-## Package maintainers
+### Prerequisites
 
-* [Liviu Ionescu](http://liviusdotnet.worldpress.com) [<ilg@livius.net>](mailto:ilg@livius.net)
+A recent [xpm](https://xpack.github.io/xpm/),
+which is a portable [Node.js](https://nodejs.org/) command line application.
 
-## Content contributors
+It is recommended to update to the latest version with:
 
-* ARM
-* [Liviu Ionescu](http://liviusdotnet.worldpress.com) [<ilg@livius.net>](mailto:ilg@livius.net)
+```sh
+npm install --global xpm@latest
+```
 
-## Support
+For details please follow the instructions in the
+[xPack install](https://xpack.github.io/install/) page.
 
-* [all issues](https://github.com/xpacks/arm-cmsis/issues)
+### xpm
 
-## Dependencies
+This package is available as
+`@xpacks/arm-cmsis` from GitHub.
 
-* none
+```sh
+cd my-project
+xpm init # Unless a package.json is already present
 
-## Keywords
+xpm install github:xpacks/arm-cmsis
 
-* arm
-* cmsis
-* cortex-m
+ls -l xpacks/@xpacks/arm-cmsis
+```
 
-## License
+### Git submodule
 
-* custom, see `LICENSE.pdf` in package root
+If, for any reason, **xpm** is not available, the next recommended
+solution is to link it as a Git submodule below an `xpacks` folder.
 
---- 
-## Documentation
+```sh
+cd my-project
+git init # Unless already a Git project
+mkdir -p xpacks
 
-To save space, this package does not contain documentation files. The current CMSIS documentation is available from [keil.com](http://www.keil.com/cmsis).
+git submodule add https://github.com/xpacks/arm-cmsis.git \
+  xpacks/@xpacks/arm-cmsis
+```
 
-## SVD schemas
+## Branches
 
-Although not required by the builds, the SVD schema files are available in the `CMSIS/Utilities` folder.
+Apart from the unused `master` branch, there are two active branches:
 
-## ARM devices
+- `xpack`, with the latest stable version (default)
+- `xpack-develop`, with the current development version
 
-Also for informative purposes, the support code (headers, startup, linker script, SVD, etc) for the ARM specific devices (ARMCM0, ARMCM0plus, ARMCM3, ARMCM4, ARMCM7, ARMCSC000, ARMCSC300) is available in the `Device/ARM` folder.
+All development is done in the `xpack-develop` branch, and contributions via
+Pull Requests should be directed to this branch.
 
-## Original files
+When new releases are published, the `xpack-develop` branch is merged
+into `xpack`.
 
-The ARM original files are kept in the repository `originals` branch, updated with each new release, and merged into the `xpack` branch (three-way merge).
+## Developer info
 
 The current files were extracted from the `CMSIS-SP-00300-r4p5-00rel0.zip` archive.
 
-To save space, the following folders/files were removed:
-
-* all non-portable *.exe files
-* CMSIS/DAP
-* CMSIS/Documentation
-* CMSIS/Driver/DriverTemplates
-* CMSIS/index.html
-* CMSIS/DSP_Lib
-* CMSIS/Lib
-* CMSIS/Pack
-* CMSIS/RTOS/RTX/LIB
-* CMSIS/RTOS/RTX/Tutorial
-* Device/\_Template\_Flash
-* Device/\_Template\_Vendor
-* Device/ARM/Documents
-* Device/ARM/Flash
-
-## Changes
-
-The actual files used by this package are in the `xpack` repository branch.
-
 Most of the files are unchanged, with the following exceptions:
 
-* the `core_cm*.h` files were edited and pragmas were added to silence the warnings:
+- the `core_cm*.h` files were edited and pragmas were added to silence the warnings:
 
+### Status
+
+The **arm-cmsis** source library is end-of-life and not
+recommended for new designs.
+
+### Build & integration info
+
+To ease the integration of this package into user projects, there
+are already made CMake configuration files (see below).
+
+For other build systems, consider the following details:
+
+#### Include folders
+
+The following folders should be passed to the compiler during the build:
+
+- `CMSIS/Include`
+
+#### Source files
+
+- none
+
+#### Preprocessor definitions
+
+- none
+
+#### Compiler options
+
+- none
+
+#### Dependencies
+
+- none
+
+#### CMake
+
+To integrate the **arm-cmsis** source library
+into a CMake application,
+add this folder to the build:
+
+```cmake
+add_subdirectory("xpacks/@xpacks/arm-cmsis")`
 ```
-#ifndef __CORE_CM4_H_GENERIC
-#define __CORE_CM4_H_GENERIC
 
-// [ILG]
-#if defined ( __GNUC__ )
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wsign-conversion"
-#pragma GCC diagnostic ignored "-Wconversion"
-#pragma GCC diagnostic ignored "-Wunused-parameter"
-#endif
+The result is an interface library that can be added as an application
+dependency with:
 
-...
+```cmake
+target_link_libraries(your-target PRIVATE
 
-// [ILG]
-#if defined ( __GNUC__ )
-#pragma GCC diagnostic pop
-#endif
-
-#endif /* __CMSIS_GENERIC */
-
+  xpacks::arm-cmsis
+)
 ```
 
-## Tests
+### Examples
 
-Compile only tests, using the `arm-none-eabi` toolchain, with most warnings enabled:
+- none
 
-* each CORE header is compiled with both C and C++, for the proper core (M0, M0+, M3, M4, M7);
-* all driver headers are compiled with both C and C++, for M0 and M4.
+### Known problems
 
+- none
 
---- 
+#### Limitations
+
+- none
+
+### Tests
+
+- none (the `test` folder is currently not used)
+
+## License
+
+The original content is released under the
+[MIT License](https://opensource.org/licenses/mit/),
+with all rights reserved to
+[Liviu Ionescu](https://github.com/ilg-ul).
