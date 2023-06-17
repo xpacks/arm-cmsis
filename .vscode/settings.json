@@ -1,0 +1,19 @@
+{
+    "cSpell.ignoreWords": [
+        "ARMCM",
+        "ARMCSC",
+        "GNUC",
+        "Ionescu",
+        "Liviu",
+        "Wconversion",
+        "Wsign",
+        "Wunused",
+        "cmsis",
+        "eabi",
+        "ifndef",
+        "keil",
+        "postversion",
+        "xpack",
+        "xpacks"
+    ]
+}
