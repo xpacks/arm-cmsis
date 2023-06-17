@@ -87,8 +87,9 @@ Most of the files are unchanged, with the following exceptions:
 
 ### Status
 
-The **arm-cmsis** source library is end-of-life and not
-recommended for new designs.
+The **arm-cmsis** source library is fully functional,
+but starting with mid 2023 it was marked as end-of-life and
+is not recommended for new designs.
 
 ### Build & integration info
 
