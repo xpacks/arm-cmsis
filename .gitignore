@@ -7,3 +7,4 @@ yotta_targets/
 yotta_modules/
 build/
 .yotta.json
+*.tgz
