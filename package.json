@@ -44,16 +44,17 @@
     "dependencies": {},
     "$dependenciesUrls": [
       "https://github.com/micro-os-plus",
-      "https://github.com/xpack-3rd-party",
+      "https://github.com/xpacks",
       "https://github.com/xpack-dev-tools"
     ],
-    "devDependencies": {
-    },
-    "properties": {
-    },
+    "devDependencies": {},
+    "properties": {},
     "actions": {
+      "install": [
+        "npm install",
+        "xpm install"
+      ]
     },
-    "buildConfigurations": {
-    }
+    "buildConfigurations": {}
   }
 }
