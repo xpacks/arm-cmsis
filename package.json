@@ -1,6 +1,6 @@
 {
   "name": "@xpacks/arm-cmsis",
-  "version": "4.5.0-6",
+  "version": "4.5.0-7.pre.1",
   "description": "A source code library with a selection of Arm CMSIS files",
   "main": "",
   "scripts": {
