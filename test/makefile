@@ -1,6 +1,16 @@
 #
-# Copyright (c) 2015 Liviu Ionescu.
-# This file is part of the xPacks project (https://xpacks.github.io).
+# This file is part of the µOS++ distribution.
+#   (https://github.com/micro-os-plus)
+# Copyright (c) 2015-2023 Liviu Ionescu.  All rights reserved.
+#
+# Permission to use, copy, modify, and/or distribute this software
+# for any purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/mit/.
+#
+# -----------------------------------------------------------------------------
+
 #
 # Cross compile the CMSIS Core files with GCC.
 #
@@ -42,9 +52,9 @@ cm4:			cm4-a.o cm4-b.o
 
 cm7:			cm7-a.o cm7-b.o
 
-driver-cm0:		driver-cm0-a.o driver-cm0-b.o 
+driver-cm0:		driver-cm0-a.o driver-cm0-b.o
 
-driver-cm4:		driver-cm4-a.o driver-cm4-b.o 
+driver-cm4:		driver-cm4-a.o driver-cm4-b.o
 
 .PHONY:			all cm0 cm0plus cm3 cm4 cm7 driver-cm0
 
@@ -89,4 +99,3 @@ driver-cm4-a.o:		driver-cm4-a.c
 
 driver-cm4-b.o:		driver-cm4-b.cpp
 	$(CPP) -mcpu=cortex-m0 -mthumb -mfloat-abi=soft $(CPPFLAGS) $(WARNFLAGS)  $(CPPWARNFLAGS) $(INCLUDES) -c -o "$@" "$<"
-	
