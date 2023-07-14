@@ -1,6 +1,5 @@
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/xpacks/arm-cmsis)](https://github.com/xpacks/arm-cmsis/blob/xpack/package.json)
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xpacks/arm-cmsis)](https://github.com/xpacks/arm-cmsis/tags/)
-[![license](https://img.shields.io/github/license/xpacks/arm-cmsis)](https://github.com/xpacks/arm-cmsis/blob/xpack/LICENSE)
 
 # An xpm/npm package with a selection of Arm CMSIS Core files
 
