@@ -2,11 +2,13 @@
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xpacks/arm-cmsis)](https://github.com/xpacks/arm-cmsis/tags/)
 [[![license](https://img.shields.io/github/license/xpacks/arm-cmsis)](https://github.com/xpacks/arm-cmsis/blob/xpack/LICENSE)
 
-# A source code library with a selection of Arm CMSIS files
+# An xpm/npm package with a selection of Arm CMSIS Core files
 
-This project provides support for running µOS++ on Cortex-M devices.
+This project provides a convenient way to integrate the
+[ARM::CMSIS Core](https://arm-software.github.io/CMSIS_5/General/html/index.html)
+into the xpm/npm ecosystem, by allowing to install it as a package dependency.
 
-The project is hosted on GitHub as
+The open-source project is hosted on GitHub as
 [xpacks/arm-cmsis](https://github.com/xpacks/arm-cmsis).
 
 ## Maintainer info
@@ -19,15 +21,29 @@ For maintainer info, please see the
 
 ## Install
 
-As a source library xPack, the easiest way to add it to a project is via
-**xpm**, but it can also be used as any Git project, for example as a submodule.
+As a source code library, this project can be integrated into another project
+in the traditional way,
+by either copying the relevant files into the target project, or by linking
+the entire project as a Git submodule.
 
-### Prerequisites
+However, things can be further automated and the most convenient way is
+to **add it as a dependency** to the project via **xpm**.
+
+### Install with xpm/npm
+
+Along with the source files, this project also includes a
+`package.json` file with the metadata that allows it to be identified as an
+**xpm/npm** package so that it can be directly installed from GitHub.
+
+#### Prerequisites
 
 A recent [xpm](https://xpack.github.io/xpm/),
-which is a portable [Node.js](https://nodejs.org/) command line application.
+which is a portable [Node.js](https://nodejs.org/) command line application
+that complements [npm](https://docs.npmjs.com)
+with several extra features specific to
+**C/C++ projects**.
 
-It is recommended to update to the latest version with:
+It is recommended to install/update to the latest version with:
 
 ```sh
 npm install --global xpm@latest
@@ -36,24 +52,37 @@ npm install --global xpm@latest
 For details please follow the instructions in the
 [xPack install](https://xpack.github.io/install/) page.
 
-### xpm
+@warning
+Be sure **xpm** is not installed with administrative rights.
 
-This package is available as
-`@xpacks/arm-cmsis` from GitHub.
+#### xpm
+
+This project can be installed as a package from GitHub with:
 
 ```sh
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install github:xpacks/arm-cmsis
+xpm install github:xpacks/arm-cmsis#4.5.0-7 --save-dev --copy
 
 ls -l xpacks/@xpacks/arm-cmsis
 ```
 
-### Git submodule
+#### npm
 
-If, for any reason, **xpm** is not available, the next recommended
-solution is to link it as a Git submodule below an `xpacks` folder.
+The package can also be installed with [npm](https://docs.npmjs.com)
+or related, but
+the features specific to C/C++ projects will not be available;
+therefore, at least for consistency reasons, it is recommended
+to use **xpm**.
+
+### Add as Git submodule
+
+Besides manually copying the relevant files to the target
+project, which will later require extra maintenance efforts to keep the
+project up to date, a more convenient
+solution is to link the entire project as a **Git submodule**,
+for example below an `xpacks` folder:
 
 ```sh
 cd my-project
@@ -87,9 +116,12 @@ Most of the files are unchanged, with the following exceptions:
 
 ### Status
 
-The **arm-cmsis** source library is fully functional,
+The **xpacks/arm-cmsis** source library is fully functional,
 but starting with mid 2023 it was marked as end-of-life and
 is not recommended for new designs.
+
+A new package will be available in the `@xpack-3rd-party` scope,
+as part of µOS++ IVe.
 
 ### Build & integration info
 
