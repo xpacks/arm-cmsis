@@ -1,4 +1,5 @@
 .DS_Store
+.DS_Store
 .cproject
 .project
 .settings/
@@ -12,7 +13,13 @@ test*/
 *.tgz
 node_modules/
 xpacks/
-*.launch
+scripts/
+*.pdsc
+NOTES.md
+
+.vscode/
+README-*.md
+
 NOTES.md
 scripts/
 documents/
