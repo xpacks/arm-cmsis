@@ -1,6 +1,6 @@
 {
   "name": "@xpacks/arm-cmsis",
-  "version": "4.5.0-7.pre.1",
+  "version": "4.5.0-7",
   "description": "A source code library with a selection of Arm CMSIS files",
   "main": "",
   "scripts": {
@@ -30,11 +30,13 @@
     "email": "ilg@livius.net",
     "url": "https://github.com/ilg-ul"
   },
-  "contributors": [{
-    "name": "Arm",
-    "url": "https://github.com/ARM-software/CMSIS_5"
-  }],
-	"license": "LicenseRef-LICENSE.pdf",
+  "contributors": [
+    {
+      "name": "Arm",
+      "url": "https://github.com/ARM-software/CMSIS_5"
+    }
+  ],
+  "license": "LicenseRef-LICENSE.pdf",
   "config": {},
   "dependencies": {},
   "bundleDependencies": [],
