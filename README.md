@@ -16,7 +16,7 @@ This page is addressed to developers who plan to include this source
 library into their own projects.
 
 For maintainer info, please see the
-[README-MAINTAINER](README-MAINTAINER.md) file.
+[README-MAINTAINER-XPACK](README-MAINTAINER-XPACK.md) file.
 
 ## Install
 
@@ -51,8 +51,7 @@ npm install --global xpm@latest
 For details please follow the instructions in the
 [xPack install](https://xpack.github.io/install/) page.
 
-@warning
-Be sure **xpm** is not installed with administrative rights.
+Warning: Be sure **xpm** is not installed with administrative rights.
 
 #### xpm
 
@@ -98,6 +97,8 @@ Apart from the unused `master` branch, there are two active branches:
 
 - `xpack`, with the latest stable version (default)
 - `xpack-develop`, with the current development version
+- `originals`, with the original Arm content, reconstructed
+  from the distributed archives
 
 All development is done in the `xpack-develop` branch, and contributions via
 Pull Requests should be directed to this branch.
@@ -106,6 +107,8 @@ When new releases are published, the `xpack-develop` branch is merged
 into `xpack`.
 
 ## Developer info
+
+### Overview
 
 The current files were extracted from the `CMSIS-SP-00300-r4p5-00rel0.zip` archive.
 
@@ -179,17 +182,17 @@ target_link_libraries(your-target PRIVATE
 
 - none
 
-#### Limitations
+### Limitations
 
 - none
 
 ### Tests
 
-- none (the `test` folder is currently not used)
+- none (the existing `test` folder is currently not used)
 
 ## License
 
-The original content is released under the
+The xPack specific content is released under the
 [MIT License](https://opensource.org/licenses/mit/),
 with all rights reserved to
 [Liviu Ionescu](https://github.com/ilg-ul).
